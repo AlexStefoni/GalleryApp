@@ -51,31 +51,17 @@ public class LoginScene extends Scene {
         PasswordField passBox = new PasswordField();
         grid.add(passBox, 1, 2);
 
-        //instance for "Sign in" button
-        Button signin_button = new Button("Sign in");
-        HBox hbtn = new HBox(10);
-
-        //positioning and sizing "Sign in" button
-        hbtn.setAlignment(Pos.BOTTOM_RIGHT);
-        hbtn.getChildren().add(signin_button);
-        grid.add(hbtn, 1, 4);
-
-        signin_button.setOnMouseClicked(new EventHandler<MouseEvent>() {
-
-            public void handle(MouseEvent e) {
-
-                //app.transToLogin2();
-                BoxLogIn.display("Log In Alert", "Login process was successful");
-
-            }
-
-        });
-
         Button btn2 = new Button("Register");
         HBox hbBtn2 = new HBox(10);
         hbBtn2.setAlignment(Pos.BOTTOM_LEFT);
         hbBtn2.getChildren().add(btn2);
         grid.add(hbBtn2, 1, 4);
+
+        Button btn = new Button("Sign in");
+        HBox hbBtn = new HBox(10);
+        hbBtn.setAlignment(Pos.BOTTOM_RIGHT);
+        hbBtn.getChildren().add(btn);
+        grid.add(hbBtn, 1, 4);
 
         this.setRoot(grid);
     }

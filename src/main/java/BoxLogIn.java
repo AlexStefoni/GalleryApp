@@ -19,7 +19,7 @@ public class BoxLogIn {
 
         Label label = new Label();
         label.setText(message);
-        Button closeButton = new Button("Close Pop-up window");
+        Button closeButton = new Button("Close window");
         closeButton.setOnAction(e -> window.close());
 
         VBox layout = new VBox(10);

@@ -16,7 +16,7 @@ public class MainLogin extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         window = primaryStage;
-        window.setTitle("SHA Login");
+        window.setTitle("ArtGallery Login");
 
         //lambda expression for shutting down program
         window.setOnCloseRequest(e -> {
