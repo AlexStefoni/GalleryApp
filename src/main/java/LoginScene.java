@@ -52,7 +52,7 @@ public class LoginScene extends Scene {
         PasswordField passBox = new PasswordField();
         grid.add(passBox, 1, 2);
 
-        Button btn2 = new Button("Log in");
+        Button btn2 = new Button("Sign in");
         HBox hbBtn2 = new HBox(10);
         hbBtn2.setAlignment(Pos.BOTTOM_LEFT);
         hbBtn2.getChildren().add(btn2);
