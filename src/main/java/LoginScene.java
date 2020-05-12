@@ -65,17 +65,7 @@ public class LoginScene extends Scene {
         grid.add(hbBtn, 1, 5);
 
 
-        btn.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
-            public void handle(MouseEvent e){
-
-                RegisterScene rs=new RegisterScene();
-                Stage stage = new Stage();
-                rs.start(stage);
-
-            }
-
-        });
 
         this.setRoot(grid);
     }
