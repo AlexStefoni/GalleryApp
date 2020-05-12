@@ -1,19 +1,22 @@
 package main.java;
 
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class LoginAfterRegister extends Application {
@@ -27,7 +30,7 @@ public class LoginAfterRegister extends Application {
         // Add UI controls to the registration form grid pane
         addUIControls(gridPane);
         // Create a scene with registration form grid pane as the root node
-        Scene scene = new Scene(gridPane, 800, 500);
+        Scene scene = new Scene(gridPane, 500, 350);
         // Set the scene in primary stage
         primaryStage.setScene(scene);
 
@@ -75,8 +78,12 @@ public class LoginAfterRegister extends Application {
         GridPane.setMargin(headerLabel, new Insets(20, 0,20,0));
 
 
+
+
         Label subheaderLabel = new Label("User Registration Successful! Please Login");
-        subheaderLabel.setFont(Font.font("Arial", FontWeight.BOLD, 18));
+        subheaderLabel.setFont(Font.font("Arial", FontWeight.NORMAL, 14));
+        subheaderLabel.setTextFill(Color.web("#008000"));
+
         gridPane.add(subheaderLabel, 0,1,2,1);
         GridPane.setHalignment(subheaderLabel, HPos.CENTER);
         GridPane.setMargin(subheaderLabel, new Insets(10, 0,10,0));
