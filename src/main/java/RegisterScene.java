@@ -1,5 +1,6 @@
 package main.java;
 
+import javafx.application.Application;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -11,21 +12,44 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.stage.Stage;
 
-public class RegisterScene extends Scene {
+public class RegisterScene extends Application {
 
-    public RegisterScene(double width, double height, MainLogin app) {
-        super(new GridPane(), width, height);
 
-        GridPane gridPane = (GridPane) this.getRoot();
+    public void start(Stage primaryStage) {
+        primaryStage.setTitle("Registration in ArtGallery");
 
+        // Create the registration form grid pane
+        GridPane gridPane = createRegistrationFormPane();
+        // Add UI controls to the registration form grid pane
+        addUIControls(gridPane);
+        // Create a scene with registration form grid pane as the root node
+        Scene scene = new Scene(gridPane, 800, 500);
+        // Set the scene in primary stage
+        primaryStage.setScene(scene);
+
+        primaryStage.show();
+    }
+
+
+    private GridPane createRegistrationFormPane() {
+        // Instantiate a new Grid Pane
+        GridPane gridPane = new GridPane();
+
+        // Position the pane at the center of the screen, both vertically and horizontally
         gridPane.setAlignment(Pos.CENTER);
+
+        // Set a padding of 20px on each side
         gridPane.setPadding(new Insets(40, 40, 40, 40));
+
         // Set the horizontal gap between columns
         gridPane.setHgap(10);
 
         // Set the vertical gap between rows
         gridPane.setVgap(10);
+
+        // Add Column Constraints
 
         // columnOneConstraints will be applied to all the nodes placed in column one.
         ColumnConstraints columnOneConstraints = new ColumnConstraints(100, 100, Double.MAX_VALUE);
@@ -37,7 +61,11 @@ public class RegisterScene extends Scene {
 
         gridPane.getColumnConstraints().addAll(columnOneConstraints, columnTwoConstrains);
 
+        return gridPane;
+    }
 
+    private void addUIControls(GridPane gridPane) {
+        // Add Header
         Label headerLabel = new Label("Registration Form");
         headerLabel.setFont(Font.font("Arial", FontWeight.BOLD, 24));
         gridPane.add(headerLabel, 0,0,2,1);
@@ -86,7 +114,6 @@ public class RegisterScene extends Scene {
 
         CheckBox checkBox1 = new CheckBox("I want to be Artist");
         HBox hbox = new HBox(checkBox1);
-
         Scene scene = new Scene(hbox, 200, 100);
 
         gridPane.add(checkBox1,1,5 );
@@ -100,10 +127,5 @@ public class RegisterScene extends Scene {
         gridPane.add(submitButton, 0, 6, 2, 1);
         GridPane.setHalignment(submitButton, HPos.CENTER);
         GridPane.setMargin(submitButton, new Insets(20, 0,20,0));
-
-
-
-        this.setRoot(gridPane);
     }
-
 }

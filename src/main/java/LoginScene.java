@@ -51,17 +51,17 @@ public class LoginScene extends Scene {
         PasswordField passBox = new PasswordField();
         grid.add(passBox, 1, 2);
 
-        Button btn2 = new Button("Register");
+        Button btn2 = new Button("Log in");
         HBox hbBtn2 = new HBox(10);
         hbBtn2.setAlignment(Pos.BOTTOM_LEFT);
         hbBtn2.getChildren().add(btn2);
         grid.add(hbBtn2, 1, 4);
 
-        Button btn = new Button("Sign in");
+        Button btn = new Button("Register");
         HBox hbBtn = new HBox(10);
-        hbBtn.setAlignment(Pos.BOTTOM_RIGHT);
+        hbBtn.setAlignment(Pos.BOTTOM_LEFT);
         hbBtn.getChildren().add(btn);
-        grid.add(hbBtn, 1, 4);
+        grid.add(hbBtn, 1, 5);
 
         this.setRoot(grid);
     }
