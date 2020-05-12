@@ -1,11 +1,13 @@
 package main.java;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -127,5 +129,18 @@ public class RegisterScene extends Application {
         gridPane.add(submitButton, 0, 6, 2, 1);
         GridPane.setHalignment(submitButton, HPos.CENTER);
         GridPane.setMargin(submitButton, new Insets(20, 0,20,0));
+
+
+        submitButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+            public void handle(MouseEvent e){
+
+                LoginAfterRegister rs=new LoginAfterRegister();
+                Stage stage = new Stage();
+                rs.start(stage);
+
+            }
+
+        });
     }
 }
