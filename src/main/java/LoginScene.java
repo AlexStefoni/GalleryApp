@@ -15,6 +15,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 public class LoginScene extends Scene {
 
@@ -62,6 +63,19 @@ public class LoginScene extends Scene {
         hbBtn.setAlignment(Pos.BOTTOM_LEFT);
         hbBtn.getChildren().add(btn);
         grid.add(hbBtn, 1, 5);
+
+
+        btn.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+            public void handle(MouseEvent e){
+
+                RegisterScene rs=new RegisterScene();
+                Stage stage = new Stage();
+                rs.start(stage);
+
+            }
+
+        });
 
         this.setRoot(grid);
     }
