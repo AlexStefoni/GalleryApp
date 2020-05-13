@@ -1,6 +1,9 @@
 package main.java;
 
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -30,6 +33,8 @@ public class RegisterScene extends Application {
         Scene scene = new Scene(gridPane, 800, 500);
         // Set the scene in primary stage
         primaryStage.setScene(scene);
+
+
 
         primaryStage.show();
     }
@@ -85,6 +90,10 @@ public class RegisterScene extends Application {
         gridPane.add(nameField, 1,1);
 
 
+
+
+
+
         // Add Email Label
         Label addressLabel = new Label("Address : ");
         gridPane.add(addressLabel, 0, 2);
@@ -118,6 +127,19 @@ public class RegisterScene extends Application {
         HBox hbox = new HBox(checkBox1);
         Scene scene = new Scene(hbox, 200, 100);
 
+
+        checkBox1.selectedProperty().addListener(new ChangeListener<Boolean>() {
+            public void changed(ObservableValue<? extends Boolean> ov,
+                                Boolean old_val, Boolean new_val) {
+                boolean isChecked = checkBox1.isSelected();
+
+            }
+
+        });
+
+
+
+
         gridPane.add(checkBox1,1,5 );
 
 
@@ -131,16 +153,44 @@ public class RegisterScene extends Application {
         GridPane.setMargin(submitButton, new Insets(20, 0,20,0));
 
 
-        submitButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+//Adding a Label
+        final Label label = new Label();
+        GridPane.setConstraints(label, 0, 6);
+        GridPane.setColumnSpan(label, 2);
+        gridPane.getChildren().add(label);
 
-            public void handle(MouseEvent e){
+//Setting an action for the Submit button
+        submitButton.setOnAction(new EventHandler<ActionEvent>() {
 
-                LoginAfterRegister rs=new LoginAfterRegister();
-                Stage stage = new Stage();
-                rs.start(stage);
+            @Override
+            public void handle(ActionEvent e) {
+                if ((nameField.getText() != null && !nameField.getText().isEmpty() && addressField.getText() != null && !addressField.getText().isEmpty()&& passwordField.getText() != null && !passwordField.getText().isEmpty() && phoneField.getText() != null && !phoneField.getText().isEmpty() )) {
+                    {
+                        submitButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
+                            public void handle(MouseEvent e){
+
+                                LoginAfterRegister rs=new LoginAfterRegister();
+                                Stage stage = new Stage();
+                                rs.start(stage);
+
+                                String name=nameField.getText();
+                                String address=addressField.getText();
+                                String phone=phoneField.getText();
+                                String password=passwordField.getText();
+
+                               // System.out.println(name+"\n" +address+"\n"+phone+"\n"+password);
+
+                            }
+
+                        });
+                    }
+                } else {
+                    label.setText("There are still empty fields");
+                }
             }
-
         });
+
+
     }
 }
