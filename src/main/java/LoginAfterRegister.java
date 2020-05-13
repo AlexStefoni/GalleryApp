@@ -1,6 +1,7 @@
 package main.java;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -9,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -112,6 +114,18 @@ public class LoginAfterRegister extends Application {
         hbBtn.setAlignment(Pos.BOTTOM_LEFT);
         hbBtn.getChildren().add(btn);
         gridPane.add(hbBtn, 1, 5);
+
+        btn.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+            public void handle(MouseEvent e){
+
+               RegisterScene rs=new RegisterScene();
+                Stage stage = new Stage();
+                rs.start(stage);
+
+            }
+
+        });
 
     }
 }
