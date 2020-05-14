@@ -34,12 +34,12 @@ public class JsonUtils {
     }
 
     public static User get_user_from_json(JSONObject obj ){
-        User aux=new User();
-        aux.setUsername(obj.getString("username"));
-        aux.setPassword(obj.getString("password"));
-        aux.setArtist(obj.getBoolean("artist"));
-        aux.setFull_name(obj.getString("full_name"));
-        aux.setAddress(obj.getString("address"));
+        User aux=new User(obj.getString("username"),
+                obj.getString("password"),
+                obj.getBoolean("artist"),
+                obj.getString("full_name"),
+                obj.getString("address"));
+
 
         return aux;
     }
@@ -61,7 +61,10 @@ public class JsonUtils {
         }
 
 
-        return true;
+        return false;
     }
-
+    public static void registerNewUser(User user){
+        JSONObject obj = JsonUtils.getJSONObjectFromFile("/user.json");
+        FileHandler.jsonWriter(JsonUtils.jsonAdder(obj,user.toJsonObj(),"User"),"assets/user.json");
+    }
 }

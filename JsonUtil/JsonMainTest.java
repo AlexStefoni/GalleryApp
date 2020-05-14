@@ -7,27 +7,16 @@ import java.util.ArrayList;
 public class JsonMainTest {
 
     public static void main(String[] args) {
-      /*  JSONObject obj = JsonUtils.getJSONObjectFromFile("/user.json");
+       JSONObject obj = JsonUtils.getJSONObjectFromFile("/user.json");
 
         ArrayList<User> list = new ArrayList<User>();
         JSONArray arr = obj.getJSONArray("User");
 
-        for (int i = 0; i < arr.length(); i++) {
-            list.add(JsonUtils.get_user_from_json(arr.getJSONObject(i)));
-        }
-        for(int i=0;i<list.size();i++){
-            System.out.println(list.get(i));
-        }
 
-        User bobo=new User();
-        bobo.setAddress("pppp");
-        bobo.setFull_name("bobovici");
-        bobo.setPassword("babanana");
-        bobo.setArtist(true);
-        bobo.setUsername("bobo");
-        */
 
-      System.out.println(JsonUtils.credentialTest("alex","cipicao"));
 
+      System.out.println(JsonUtils.credentialTest("alexa","cipicao"));
+      User alex=new User("AAAAalex","alex",true,"Alex ","acasa");
+      JsonUtils.registerNewUser(alex);
     }
 }

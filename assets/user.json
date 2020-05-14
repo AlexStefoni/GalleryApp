@@ -1,18 +1,37 @@
-{
-  "User" : [
+{"User": [
     {
-      "username" : "alex",
-      "password" : "cipicao",
-      "artist" : false,
-      "full_name": "tutu",
-      "address": "acasa n pat"
+        "password": "cipicao",
+        "full_name": "tutu",
+        "address": "acasa n pat",
+        "artist": false,
+        "username": "alex"
     },
     {
-      "username" : "pepe",
-      "password" : "pip",
-      "artist" : false,
-      "full_name": "tutu",
-      "address": "acasa n pat"
+        "password": "pip",
+        "full_name": "tutu",
+        "address": "acasa n pat",
+        "artist": false,
+        "username": "pepe"
+    },
+    {
+        "password": "alex",
+        "full_name": "Alex ",
+        "address": "acasa",
+        "artist": true,
+        "username": "alex"
+    },
+    {
+        "password": "alex",
+        "full_name": "Alex ",
+        "address": "acasa",
+        "artist": true,
+        "username": "alex"
+    },
+    {
+        "password": "alex",
+        "full_name": "Alex ",
+        "address": "acasa",
+        "artist": true,
+        "username": "AAAAalex"
     }
-  ]
-}
+]}
