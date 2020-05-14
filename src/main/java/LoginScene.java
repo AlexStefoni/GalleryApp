@@ -58,6 +58,9 @@ public class LoginScene extends Scene {
         hbBtn2.getChildren().add(btn2);
         grid.add(hbBtn2, 1, 4);
 
+
+
+
         Button btn = new Button("Register");
         HBox hbBtn = new HBox(10);
         hbBtn.setAlignment(Pos.BOTTOM_LEFT);

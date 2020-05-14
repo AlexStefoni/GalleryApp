@@ -18,6 +18,7 @@ import javafx.scene.layout.Priority;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+import main.java.MainLogin;
 
 public class RegisterScene extends Application {
 
@@ -28,50 +29,7 @@ public class RegisterScene extends Application {
         // Create the registration form grid pane
         GridPane gridPane = createRegistrationFormPane();
         // Add UI controls to the registration form grid pane
-        addUIControls(gridPane);
-        // Create a scene with registration form grid pane as the root node
-        Scene scene = new Scene(gridPane, 800, 500);
-        // Set the scene in primary stage
-        primaryStage.setScene(scene);
 
-
-
-        primaryStage.show();
-    }
-
-
-    private GridPane createRegistrationFormPane() {
-        // Instantiate a new Grid Pane
-        GridPane gridPane = new GridPane();
-
-        // Position the pane at the center of the screen, both vertically and horizontally
-        gridPane.setAlignment(Pos.CENTER);
-
-        // Set a padding of 20px on each side
-        gridPane.setPadding(new Insets(40, 40, 40, 40));
-
-        // Set the horizontal gap between columns
-        gridPane.setHgap(10);
-
-        // Set the vertical gap between rows
-        gridPane.setVgap(10);
-
-        // Add Column Constraints
-
-        // columnOneConstraints will be applied to all the nodes placed in column one.
-        ColumnConstraints columnOneConstraints = new ColumnConstraints(100, 100, Double.MAX_VALUE);
-        columnOneConstraints.setHalignment(HPos.RIGHT);
-
-        // columnTwoConstraints will be applied to all the nodes placed in column two.
-        ColumnConstraints columnTwoConstrains = new ColumnConstraints(200,200, Double.MAX_VALUE);
-        columnTwoConstrains.setHgrow(Priority.ALWAYS);
-
-        gridPane.getColumnConstraints().addAll(columnOneConstraints, columnTwoConstrains);
-
-        return gridPane;
-    }
-
-    private void addUIControls(GridPane gridPane) {
         // Add Header
         Label headerLabel = new Label("Registration Form");
         headerLabel.setFont(Font.font("Arial", FontWeight.BOLD, 24));
@@ -88,9 +46,6 @@ public class RegisterScene extends Application {
         TextField nameField = new TextField();
         nameField.setPrefHeight(40);
         gridPane.add(nameField, 1,1);
-
-
-
 
 
 
@@ -179,7 +134,10 @@ public class RegisterScene extends Application {
                                 String phone=phoneField.getText();
                                 String password=passwordField.getText();
 
-                               // System.out.println(name+"\n" +address+"\n"+phone+"\n"+password);
+                                primaryStage.close();
+
+
+
 
                             }
 
@@ -192,5 +150,46 @@ public class RegisterScene extends Application {
         });
 
 
+
+
+
+        // Create a scene with registration form grid pane as the root node
+        Scene scene1 = new Scene(gridPane, 800, 500);
+        // Set the scene in primary stage
+        primaryStage.setScene(scene1);
+        primaryStage.show();
+
+    }
+
+
+    private GridPane createRegistrationFormPane() {
+        // Instantiate a new Grid Pane
+        GridPane gridPane = new GridPane();
+
+        // Position the pane at the center of the screen, both vertically and horizontally
+        gridPane.setAlignment(Pos.CENTER);
+
+        // Set a padding of 20px on each side
+        gridPane.setPadding(new Insets(40, 40, 40, 40));
+
+        // Set the horizontal gap between columns
+        gridPane.setHgap(10);
+
+        // Set the vertical gap between rows
+        gridPane.setVgap(10);
+
+        // Add Column Constraints
+
+        // columnOneConstraints will be applied to all the nodes placed in column one.
+        ColumnConstraints columnOneConstraints = new ColumnConstraints(100, 100, Double.MAX_VALUE);
+        columnOneConstraints.setHalignment(HPos.RIGHT);
+
+        // columnTwoConstraints will be applied to all the nodes placed in column two.
+        ColumnConstraints columnTwoConstrains = new ColumnConstraints(200,200, Double.MAX_VALUE);
+        columnTwoConstrains.setHgrow(Priority.ALWAYS);
+
+        gridPane.getColumnConstraints().addAll(columnOneConstraints, columnTwoConstrains);
+
+        return gridPane;
     }
 }
