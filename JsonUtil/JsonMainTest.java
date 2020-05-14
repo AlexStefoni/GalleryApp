@@ -2,14 +2,12 @@
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class JsonMainTest {
 
     public static void main(String[] args) {
-        JSONObject obj = JsonUtils.getJSONObjectFromFile("/obj.json");
+        JSONObject obj = JsonUtils.getJSONObjectFromFile("/user.json");
 
         ArrayList<User> list = new ArrayList<User>();
         JSONArray arr = obj.getJSONArray("User");
@@ -27,14 +25,6 @@ public class JsonMainTest {
         bobo.setPassword("babanana");
         bobo.setArtist(true);
         bobo.setUsername("bobo");
-        arr.put(bobo);
-        try (FileWriter file = new FileWriter("obj.json")) {
 
-            file.write(obj.toString());
-            file.flush();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }

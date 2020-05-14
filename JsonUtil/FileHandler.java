@@ -18,8 +18,19 @@ public class FileHandler{
         }
         return null;
     }
-   
 
+    public static void  jsonWriter(String jsonString,String path)//needs asset/ob.json
+    {
+
+        try {
+            FileWriter fileWriter = new FileWriter(path);
+            fileWriter.write(jsonString);
+            fileWriter.close();
+
+        }catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
 
 
 

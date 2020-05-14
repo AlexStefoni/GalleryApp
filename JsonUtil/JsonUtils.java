@@ -1,5 +1,6 @@
 
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.Scanner;
@@ -43,6 +44,10 @@ public class JsonUtils {
         return aux;
     }
 
-
+    public static String jsonAdder(JSONObject obj_prime,JSONObject obj,String mode){
+        JSONArray arr = obj_prime.getJSONArray(mode);
+        arr.put(obj);
+        return obj_prime.toString();
+    }
 
 }
