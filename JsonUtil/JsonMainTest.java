@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class JsonMainTest {
 
     public static void main(String[] args) {
-        JSONObject obj = JsonUtils.getJSONObjectFromFile("/user.json");
+      /*  JSONObject obj = JsonUtils.getJSONObjectFromFile("/user.json");
 
         ArrayList<User> list = new ArrayList<User>();
         JSONArray arr = obj.getJSONArray("User");
@@ -25,6 +25,6 @@ public class JsonMainTest {
         bobo.setPassword("babanana");
         bobo.setArtist(true);
         bobo.setUsername("bobo");
-
+        */
     }
 }
