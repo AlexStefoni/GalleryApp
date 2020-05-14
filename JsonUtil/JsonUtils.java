@@ -50,4 +50,18 @@ public class JsonUtils {
         return obj_prime.toString(4);
     }
 
+    public static boolean credentialTest(String u,String p){
+        JSONObject obj = JsonUtils.getJSONObjectFromFile("/user.json");
+
+
+        JSONArray arr=obj.getJSONArray("User");
+        for(int i=0;i<arr.length();i++){
+            if((arr.getJSONObject(i).get("username")==u) && (arr.getJSONObject(i).get("password")==u))
+            return true;
+        }
+
+
+        return true;
+    }
+
 }
