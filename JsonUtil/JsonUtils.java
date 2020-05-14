@@ -47,7 +47,7 @@ public class JsonUtils {
     public static String jsonAdder(JSONObject obj_prime,JSONObject obj,String mode){
         JSONArray arr = obj_prime.getJSONArray(mode);
         arr.put(obj);
-        return obj_prime.toString();
+        return obj_prime.toString(4);
     }
 
 }
