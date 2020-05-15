@@ -69,7 +69,7 @@ public class JsonUtils {
     }
     public static void registerNewUser(User user){
         JSONObject obj = JsonUtils.getJSONObjectFromFile("/user.json");
-        FileHandler.jsonWriter(JsonUtils.jsonAdder(obj,user.toJsonObj(),"json.User"),"assets/user.json");
+        FileHandler.jsonWriter(JsonUtils.jsonAdder(obj,user.toJsonObj(),"User"),"assets/user.json");
     }
 
     public static String encode(String s){
