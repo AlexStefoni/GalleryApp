@@ -48,7 +48,7 @@ public class RegisterScene extends Application {
         gridPane.add(nameField, 1,1);
 
 
-        Label userLabel = new Label("User name : ");
+        Label userLabel = new Label("json.User name : ");
         gridPane.add(userLabel, 0,2);
 
 

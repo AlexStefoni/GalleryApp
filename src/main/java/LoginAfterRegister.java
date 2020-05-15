@@ -82,7 +82,7 @@ public class LoginAfterRegister extends Application {
 
 
 
-        Label subheaderLabel = new Label("User Registration Successful! Please Login");
+        Label subheaderLabel = new Label("json.User Registration Successful! Please Login");
         subheaderLabel.setFont(Font.font("Arial", FontWeight.NORMAL, 14));
         subheaderLabel.setTextFill(Color.web("#008000"));
 
