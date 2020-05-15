@@ -17,7 +17,7 @@ public class JsonMainTest {
 
 
      System.out.println(JsonUtils.credentialTest("alex","bob"));
-      //json.User alex=new json.User("alex","bob",true,"Alex ","acasa");
+      //json.User alex=new json.User("alex","bob",true,"Alex ","acasa","04230423);
       //json.JsonUtils.registerNewUser(alex);
     }
 }
