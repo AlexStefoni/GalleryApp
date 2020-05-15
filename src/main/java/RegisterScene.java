@@ -148,7 +148,7 @@ public class RegisterScene extends Application {
                                 //writing the user assets
                                 //replace User(,,false,,); with the value from the checkbox[SOLVED]
                                 //also phone ? i don/t remeber any phone .
-                                User user_register=new User(user,password,isSelected,name,address);
+                                User user_register=new User(user,password,isSelected,name,address,phone);
                                 json.JsonUtils.registerNewUser(user_register);
                                 primaryStage.close();
 
