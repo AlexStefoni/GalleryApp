@@ -40,8 +40,7 @@ public class JsonUtils {
                 obj.getString("password"),
                 obj.getBoolean("artist"),
                 obj.getString("full_name"),
-                obj.getString("address"),
-                obj.getString("phone"));
+                obj.getString("address"));
 
 
         return aux;

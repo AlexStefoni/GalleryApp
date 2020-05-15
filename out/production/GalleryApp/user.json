@@ -1,8 +1,16 @@
-{"User": [{
-    "password": "cGVwZQ==",
-    "full_name": "pepe",
-    "address": "acasa",
-    "artist": true,
-    "phone": "pepe",
-    "username": "pepe"
-}]}
+{"User": [
+    {
+        "password": "Ym9i",
+        "full_name": "Alex ",
+        "address": "acasa",
+        "artist": true,
+        "username": "alex"
+    },
+    {
+        "password": "MTIzNA==",
+        "full_name": "Bobica",
+        "address": "undeva",
+        "artist": false,
+        "username": "bob"
+    }
+]}
