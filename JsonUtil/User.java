@@ -1,4 +1,6 @@
+import org.json.JSONObject;
 
+import java.util.Base64;
 
 public class User {
     private String username;
@@ -7,30 +9,22 @@ public class User {
     private String full_name;
     private String address;
 
-    public String toString(){
-        return " "+username+" ;"+password+" ; "+artist;
+    public User (String username,String password,Boolean artist,String full_name,String address){
+        this.username=username;
+        this.artist=artist;
+        this.full_name=full_name;
+        this.address=address;
+        this.password= JsonUtils.encode(password);
     }
-    public void setUsername(String x){
-        this.username=x;
-    }
+    public User(){}
+    public JSONObject toJsonObj(){
+        JSONObject obj =new JSONObject();
+        obj.put("username",this.username);
+        obj.put("password",this.password);
+        obj.put("artist",this.artist);
+        obj.put("full_name",this.full_name);
+        obj.put("address",this.address);
 
-    public void setPassword(String x){
-        this.password=x;
-    }
-
-    public void setArtist(Boolean x){
-        this.artist=x;
-    }
-
-    public void setFull_name(String x){
-        this.full_name=x;
-    }
-
-    public void setAddress(String x){
-        this.address=x;
-    }
-
-    public void set(){
-
+        return obj;
     }
 }

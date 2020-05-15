@@ -3,6 +3,8 @@
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import javax.lang.model.element.NestingKind;
+import java.util.Base64;
 import java.util.Scanner;
 import java.io.InputStream;
 public class JsonUtils {
@@ -34,12 +36,12 @@ public class JsonUtils {
     }
 
     public static User get_user_from_json(JSONObject obj ){
-        User aux=new User();
-        aux.setUsername(obj.getString("username"));
-        aux.setPassword(obj.getString("password"));
-        aux.setArtist(obj.getBoolean("artist"));
-        aux.setFull_name(obj.getString("full_name"));
-        aux.setAddress(obj.getString("address"));
+        User aux=new User(obj.getString("username"),
+                obj.getString("password"),
+                obj.getBoolean("artist"),
+                obj.getString("full_name"),
+                obj.getString("address"));
+
 
         return aux;
     }
@@ -50,4 +52,33 @@ public class JsonUtils {
         return obj_prime.toString(4);
     }
 
+    public static boolean credentialTest(String u,String p){
+        JSONObject obj = JsonUtils.getJSONObjectFromFile("/user.json");
+
+
+        JSONArray arr=obj.getJSONArray("User");
+        for(int i=0;i<arr.length();i++){
+            System.out.println(decode(arr.getJSONObject(i).get("password").toString()));
+            if((arr.getJSONObject(i).get("username").toString().equals(u)) &&
+                    (decode(arr.getJSONObject(i).get("password").toString()).equals(p)))
+            return true;
+        }
+
+
+        return false;
+    }
+    public static void registerNewUser(User user){
+        JSONObject obj = JsonUtils.getJSONObjectFromFile("/user.json");
+        FileHandler.jsonWriter(JsonUtils.jsonAdder(obj,user.toJsonObj(),"User"),"assets/user.json");
+    }
+
+    public static String encode(String s){
+        String encodedString = Base64.getEncoder().encodeToString(s.getBytes());
+        return encodedString;
+    }
+    public static String decode(String s){
+        byte[] decodedBytes = Base64.getDecoder().decode(s);
+        String decodedString = new String(decodedBytes);
+        return decodedString;
+    }
 }
