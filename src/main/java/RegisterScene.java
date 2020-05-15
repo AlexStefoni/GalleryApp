@@ -18,6 +18,7 @@ import javafx.scene.layout.Priority;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+import json.User;
 import main.java.MainLogin;
 
 public class RegisterScene extends Application {
@@ -48,7 +49,7 @@ public class RegisterScene extends Application {
         gridPane.add(nameField, 1,1);
 
 
-        Label userLabel = new Label("json.User name : ");
+        Label userLabel = new Label("Username : "); //changed from json.User->Username
         gridPane.add(userLabel, 0,2);
 
 
@@ -143,8 +144,12 @@ public class RegisterScene extends Application {
                                 String phone=phoneField.getText();
                                 String password=passwordField.getText();
                                 String user=userField.getText();
+                                boolean isSelected = checkBox1.isSelected();
                                 //writing the user assets
-
+                                //replace User(,,false,,); with the value from the checkbox[SOLVED]
+                                //also phone ? i don/t remeber any phone .
+                                User user_register=new User(user,password,isSelected,name,address);
+                                json.JsonUtils.registerNewUser(user_register);
                                 primaryStage.close();
 
 
