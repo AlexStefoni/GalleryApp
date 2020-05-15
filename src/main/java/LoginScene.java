@@ -19,7 +19,7 @@ import javafx.stage.Stage;
 
 public class LoginScene extends Scene {
 
-    public LoginScene(double width, double height) {
+    public LoginScene(double width, double height, MainLogin app) {
         super(new GridPane(), width, height);
 
         /*used Grid panelling layout style for getting user input
@@ -58,9 +58,6 @@ public class LoginScene extends Scene {
         hbBtn2.getChildren().add(btn2);
         grid.add(hbBtn2, 1, 4);
 
-        //verifit credentials in file assets,
-        //if true, open main page, else false->wrong credetials 
-
         Button btn = new Button("Register");
         HBox hbBtn = new HBox(10);
         hbBtn.setAlignment(Pos.BOTTOM_LEFT);
@@ -68,17 +65,7 @@ public class LoginScene extends Scene {
         grid.add(hbBtn, 1, 5);
 
 
-        btn.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
-                public void handle(MouseEvent e){
-
-                    RegisterScene rs=new RegisterScene();
-                    Stage stage = new Stage();
-                    rs.start(stage);
-
-                }
-
-        });
 
         this.setRoot(grid);
     }
