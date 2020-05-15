@@ -1,37 +1,7 @@
-{"User": [
-    {
-        "password": "cipicao",
-        "full_name": "tutu",
-        "address": "acasa n pat",
-        "artist": false,
-        "username": "alex"
-    },
-    {
-        "password": "pip",
-        "full_name": "tutu",
-        "address": "acasa n pat",
-        "artist": false,
-        "username": "pepe"
-    },
-    {
-        "password": "alex",
-        "full_name": "Alex ",
-        "address": "acasa",
-        "artist": true,
-        "username": "alex"
-    },
-    {
-        "password": "alex",
-        "full_name": "Alex ",
-        "address": "acasa",
-        "artist": true,
-        "username": "alex"
-    },
-    {
-        "password": "alex",
-        "full_name": "Alex ",
-        "address": "acasa",
-        "artist": true,
-        "username": "AAAAalex"
-    }
-]}
+{"User": [{
+    "password": "Ym9i",
+    "full_name": "Alex ",
+    "address": "acasa",
+    "artist": true,
+    "username": "alex"
+}]}

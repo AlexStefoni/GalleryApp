@@ -3,6 +3,8 @@
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import javax.lang.model.element.NestingKind;
+import java.util.Base64;
 import java.util.Scanner;
 import java.io.InputStream;
 public class JsonUtils {
@@ -56,7 +58,9 @@ public class JsonUtils {
 
         JSONArray arr=obj.getJSONArray("User");
         for(int i=0;i<arr.length();i++){
-            if((arr.getJSONObject(i).get("username")==u) && (arr.getJSONObject(i).get("password")==u))
+            System.out.println(decode(arr.getJSONObject(i).get("password").toString()));
+            if((arr.getJSONObject(i).get("username").toString().equals(u)) &&
+                    (decode(arr.getJSONObject(i).get("password").toString()).equals(p)))
             return true;
         }
 
@@ -66,5 +70,15 @@ public class JsonUtils {
     public static void registerNewUser(User user){
         JSONObject obj = JsonUtils.getJSONObjectFromFile("/user.json");
         FileHandler.jsonWriter(JsonUtils.jsonAdder(obj,user.toJsonObj(),"User"),"assets/user.json");
+    }
+
+    public static String encode(String s){
+        String encodedString = Base64.getEncoder().encodeToString(s.getBytes());
+        return encodedString;
+    }
+    public static String decode(String s){
+        byte[] decodedBytes = Base64.getDecoder().decode(s);
+        String decodedString = new String(decodedBytes);
+        return decodedString;
     }
 }

@@ -1,5 +1,7 @@
 import org.json.JSONObject;
 
+import java.util.Base64;
+
 public class User {
     private String username;
     private String password;
@@ -9,10 +11,10 @@ public class User {
 
     public User (String username,String password,Boolean artist,String full_name,String address){
         this.username=username;
-        this.password=password;
         this.artist=artist;
         this.full_name=full_name;
         this.address=address;
+        this.password= JsonUtils.encode(password);
     }
     public User(){}
     public JSONObject toJsonObj(){
