@@ -48,15 +48,24 @@ public class RegisterScene extends Application {
         gridPane.add(nameField, 1,1);
 
 
+        Label userLabel = new Label("User name : ");
+        gridPane.add(userLabel, 0,2);
+
+
+        // Add Name Text Field
+        TextField userField = new TextField();
+        userField.setPrefHeight(40);
+        gridPane.add(userField, 1,2);
+
 
         // Add Email Label
         Label addressLabel = new Label("Address : ");
-        gridPane.add(addressLabel, 0, 2);
+        gridPane.add(addressLabel, 0, 3);
 
         // Add Email Text Field
         TextField addressField = new TextField();
         addressField.setPrefHeight(40);
-        gridPane.add(addressField, 1, 2);
+        gridPane.add(addressField, 1, 3);
 
 
         // Add Password Label
@@ -70,12 +79,12 @@ public class RegisterScene extends Application {
 
 
         Label phoneLabel = new Label("Phone : ");
-        gridPane.add(phoneLabel, 0, 3);
+        gridPane.add(phoneLabel, 0, 5);
 
         // Add Phone Field
         TextField phoneField = new TextField();
         phoneField.setPrefHeight(40);
-        gridPane.add(phoneField, 1, 3);
+        gridPane.add(phoneField, 1, 5);
 
 
         CheckBox checkBox1 = new CheckBox("I want to be Artist");
@@ -95,7 +104,7 @@ public class RegisterScene extends Application {
 
 
 
-        gridPane.add(checkBox1,1,5 );
+        gridPane.add(checkBox1,1,6 );
 
 
         // Add Submit Button
@@ -110,7 +119,7 @@ public class RegisterScene extends Application {
 
 //Adding a Label
         final Label label = new Label();
-        GridPane.setConstraints(label, 0, 6);
+        GridPane.setConstraints(label, 0, 7);
         GridPane.setColumnSpan(label, 2);
         gridPane.getChildren().add(label);
 
@@ -133,6 +142,8 @@ public class RegisterScene extends Application {
                                 String address=addressField.getText();
                                 String phone=phoneField.getText();
                                 String password=passwordField.getText();
+                                String user=userField.getText();
+                                //writing the user assets
 
                                 primaryStage.close();
 

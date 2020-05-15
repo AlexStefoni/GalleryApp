@@ -58,8 +58,8 @@ public class LoginScene extends Scene {
         hbBtn2.getChildren().add(btn2);
         grid.add(hbBtn2, 1, 4);
 
-
-
+        //verifit credentials in file assets,
+        //if true, open main page, else false->wrong credetials 
 
         Button btn = new Button("Register");
         HBox hbBtn = new HBox(10);
@@ -70,13 +70,13 @@ public class LoginScene extends Scene {
 
         btn.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
-            public void handle(MouseEvent e){
+                public void handle(MouseEvent e){
 
-                RegisterScene rs=new RegisterScene();
-                Stage stage = new Stage();
-                rs.start(stage);
+                    RegisterScene rs=new RegisterScene();
+                    Stage stage = new Stage();
+                    rs.start(stage);
 
-            }
+                }
 
         });
 
