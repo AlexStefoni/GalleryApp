@@ -56,7 +56,7 @@ public class JsonUtils {
         JSONObject obj = JsonUtils.getJSONObjectFromFile("/user.json");
 
 
-        JSONArray arr=obj.getJSONArray("json.User");
+        JSONArray arr=obj.getJSONArray("User");
         for(int i=0;i<arr.length();i++){
             System.out.println(decode(arr.getJSONObject(i).get("password").toString()));
             if((arr.getJSONObject(i).get("username").toString().equals(u)) &&
