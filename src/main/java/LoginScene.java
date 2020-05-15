@@ -19,7 +19,7 @@ import javafx.stage.Stage;
 
 public class LoginScene extends Scene {
 
-    public LoginScene(double width, double height, MainLogin app) {
+    public LoginScene(double width, double height) {
         super(new GridPane(), width, height);
 
         /*used Grid panelling layout style for getting user input
