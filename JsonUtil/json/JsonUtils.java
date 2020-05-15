@@ -1,12 +1,12 @@
-
+package json;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import javax.lang.model.element.NestingKind;
 import java.util.Base64;
 import java.util.Scanner;
 import java.io.InputStream;
+
 public class JsonUtils {
 
 
@@ -56,7 +56,7 @@ public class JsonUtils {
         JSONObject obj = JsonUtils.getJSONObjectFromFile("/user.json");
 
 
-        JSONArray arr=obj.getJSONArray("User");
+        JSONArray arr=obj.getJSONArray("json.User");
         for(int i=0;i<arr.length();i++){
             System.out.println(decode(arr.getJSONObject(i).get("password").toString()));
             if((arr.getJSONObject(i).get("username").toString().equals(u)) &&
@@ -69,7 +69,7 @@ public class JsonUtils {
     }
     public static void registerNewUser(User user){
         JSONObject obj = JsonUtils.getJSONObjectFromFile("/user.json");
-        FileHandler.jsonWriter(JsonUtils.jsonAdder(obj,user.toJsonObj(),"User"),"assets/user.json");
+        FileHandler.jsonWriter(JsonUtils.jsonAdder(obj,user.toJsonObj(),"json.User"),"assets/user.json");
     }
 
     public static String encode(String s){
