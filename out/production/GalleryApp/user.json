@@ -1,8 +1,18 @@
-{"User": [{
-    "password": "cGVwZQ==",
-    "full_name": "pepe",
-    "address": "acasa",
-    "artist": true,
-    "phone": "pepe",
-    "username": "pepe"
-}]}
+{"User": [
+    {
+        "password": "cGVwZQ==",
+        "full_name": "pepe",
+        "address": "acasa",
+        "artist": true,
+        "phone": "pepe",
+        "username": "pepe"
+    },
+    {
+        "password": "c3VsZXJ1bGlqZTk5",
+        "full_name": "Petronela Vieru",
+        "address": "nicaiesti",
+        "artist": false,
+        "phone": "0784355525",
+        "username": "pepe_ella"
+    }
+]}

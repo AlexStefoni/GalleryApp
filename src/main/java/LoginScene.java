@@ -19,15 +19,12 @@ import javafx.stage.Stage;
 import json.JsonUtils;
 
 
+
 public class LoginScene extends Scene {
 
-    public LoginScene(double width, double height) {
+    public LoginScene(double width, double height, Stage window) {
         super(new GridPane(), width, height);
 
-        /*used Grid panelling layout style for getting user input
-		instace for Grid Panel with positioning on scene
-		and positioning each block
-		*/
         GridPane grid = (GridPane) this.getRoot();
 
         grid.setAlignment(Pos.CENTER);
@@ -62,11 +59,17 @@ public class LoginScene extends Scene {
 
         btn2.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
-            public void handle(MouseEvent e){
+            public void handle(MouseEvent e) {
 
-                String username=userBox.getText();
-                String password=passBox.getText();
-                    System.out.println(JsonUtils.credentialTest(username, password));
+                String username = userBox.getText();
+                String password = passBox.getText();
+                if (JsonUtils.credentialTest(username, password) == false)
+                {
+                    WrongCredentials wr=new WrongCredentials();
+                    wr.display();
+
+                }
+
 
             }
 
@@ -86,6 +89,7 @@ public class LoginScene extends Scene {
                 RegisterScene rs=new RegisterScene();
                 Stage stage = new Stage();
                 rs.start(stage);
+                window.close();
 
             }
 

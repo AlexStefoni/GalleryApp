@@ -25,7 +25,7 @@ public class MainLogin extends Application {
         });
 
         //instance for Login Scene
-        Scene scene = new LoginScene(500, 350);
+        Scene scene = new LoginScene(500, 350, window);
 
         window.setScene(scene);
         window.show();

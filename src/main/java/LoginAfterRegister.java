@@ -20,6 +20,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import json.JsonUtils;
 
 public class LoginAfterRegister extends Application {
 
@@ -108,6 +109,24 @@ public class LoginAfterRegister extends Application {
         hbBtn2.setAlignment(Pos.BOTTOM_LEFT);
         hbBtn2.getChildren().add(btn2);
         gridPane.add(hbBtn2, 1, 4);
+
+        btn2.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+            public void handle(MouseEvent e) {
+
+                String username = userBox.getText();
+                String password = passBox.getText();
+                if (JsonUtils.credentialTest(username, password) == false)
+                {
+                    WrongCredentials wr=new WrongCredentials();
+                    wr.display();
+
+                }
+
+
+            }
+
+        });
 
         Button btn = new Button("Register");
         HBox hbBtn = new HBox(10);
