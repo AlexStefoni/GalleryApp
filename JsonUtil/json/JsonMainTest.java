@@ -11,7 +11,7 @@ public class JsonMainTest {
        JSONObject obj = JsonUtils.getJSONObjectFromFile("/user.json");
 
         ArrayList<User> list = new ArrayList<User>();
-        JSONArray arr = obj.getJSONArray("json.User");
+        JSONArray arr = obj.getJSONArray("User");
 
 
 

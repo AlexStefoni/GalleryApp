@@ -20,7 +20,7 @@ public class Artwork {
                    int size_y){
         this.author_name=author_name;
         this.title=title;
-        this.picture_path=picture_path;
+        this.picture_path=ArtworkUtils.imageReader(picture_path);
         this.material=material;
         this.price=price;
         this.size=size_x+" x "+size_y;
