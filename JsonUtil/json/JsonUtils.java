@@ -1,9 +1,8 @@
-
+package json;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import javax.lang.model.element.NestingKind;
 import java.util.Base64;
 import java.util.Scanner;
 import java.io.InputStream;

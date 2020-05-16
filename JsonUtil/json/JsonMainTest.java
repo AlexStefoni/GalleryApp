@@ -1,3 +1,4 @@
+package json;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -10,13 +11,13 @@ public class JsonMainTest {
        JSONObject obj = JsonUtils.getJSONObjectFromFile("/user.json");
 
         ArrayList<User> list = new ArrayList<User>();
-        JSONArray arr = obj.getJSONArray("User");
+        JSONArray arr = obj.getJSONArray("json.User");
 
 
 
 
      System.out.println(JsonUtils.credentialTest("alex","bob"));
-      //User alex=new User("alex","bob",true,"Alex ","acasa");
-      //JsonUtils.registerNewUser(alex);
+      //json.User alex=new json.User("alex","bob",true,"Alex ","acasa");
+      //json.JsonUtils.registerNewUser(alex);
     }
 }
