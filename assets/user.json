@@ -15,5 +15,20 @@
         "phone": "0784355525",
         "username": "pepe_ella"
     },
-
+    {
+        "password": "MTIzNDU2",
+        "full_name": "Marin Sorescu",
+        "address": "mormant",
+        "artist": true,
+        "phone": "nu are",
+        "username": "poezii"
+    },
+    {
+        "password": "cGVwZQ==",
+        "full_name": "pepe",
+        "address": "pepe",
+        "artist": true,
+        "phone": "pepe",
+        "username": "pepe"
+    }
 ]}

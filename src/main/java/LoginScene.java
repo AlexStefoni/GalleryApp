@@ -69,6 +69,13 @@ public class LoginScene extends Scene {
                     wr.display();
 
                 }
+                else
+                {
+                    HomePageClient hm=new HomePageClient();
+                    Stage stage=new Stage();
+                    hm.start(stage);
+                    window.close();
+                }
 
 
             }
