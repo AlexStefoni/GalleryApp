@@ -71,6 +71,7 @@ public class LoginScene extends Scene {
                 }
                 else
                 {
+
                     HomePageClient hm=new HomePageClient();
                     Stage stage=new Stage();
                     hm.start(stage);
