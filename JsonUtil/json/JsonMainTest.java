@@ -1,3 +1,4 @@
+package json;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -16,7 +17,7 @@ public class JsonMainTest {
 
 
      System.out.println(JsonUtils.credentialTest("alex","bob"));
-      //User alex=new User("alex","bob",true,"Alex ","acasa");
-      //JsonUtils.registerNewUser(alex);
+      //json.User alex=new json.User("alex","bob",true,"Alex ","acasa");
+      //json.JsonUtils.registerNewUser(alex);
     }
 }

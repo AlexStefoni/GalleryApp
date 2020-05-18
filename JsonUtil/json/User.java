@@ -1,6 +1,6 @@
-import org.json.JSONObject;
+package json;
 
-import java.util.Base64;
+import org.json.JSONObject;
 
 public class User {
     private String username;
