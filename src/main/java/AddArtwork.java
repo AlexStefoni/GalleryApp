@@ -98,7 +98,7 @@ public class AddArtwork extends Application {
 
 
 
-            Label artistLabel =new Label("Artist name:");
+            Label artistLabel =new Label("Artist name:    ");
             gp.add(artistLabel,0,3);
             TextField artistName = new TextField();
             artistName.setMaxSize(300,200);
@@ -107,14 +107,14 @@ public class AddArtwork extends Application {
 
 
 
-            Label titleLabel =new Label("Title:");
+            Label titleLabel =new Label("Title:    ");
             gp.add(titleLabel,0,4);
             TextField title = new TextField();
             title.setMaxSize(300,200);
             gp.add(title,1,4);
 
 
-            Label priceLabel=new Label("Price:");
+            Label priceLabel=new Label("Price:    ");
             gp.add(priceLabel,0,5);
             TextField price = new TextField();
             price.setMaxSize(300,200);
@@ -122,7 +122,7 @@ public class AddArtwork extends Application {
 
 
 
-            Label materialLabel=new Label("Material:");
+            Label materialLabel=new Label("Material:    ");
             gp.add(materialLabel,0,6);
             TextField material = new TextField();
             material.setMaxSize(300,200);
@@ -130,14 +130,14 @@ public class AddArtwork extends Application {
 
 
 
-            Label sizeLabel=new Label("Size:");
+            Label sizeLabel=new Label("Size:    ");
             gp.add(sizeLabel,0,7);
             TextField size = new TextField();
             size.setMaxSize(300,200);
             gp.add(size,1,7);
 
 
-            Label stockLabel=new Label("Status:");
+            Label stockLabel=new Label("Status:    ");
             gp.add(stockLabel,0,8);
             TextField stock = new TextField();
             stock.setMaxSize(300,200);
