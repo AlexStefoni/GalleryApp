@@ -14,8 +14,8 @@ public class MainLogin extends Application {
     Stage window;
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
-        window = primaryStage;
+    public void start(Stage primary) throws Exception {
+        window = primary;
         window.setTitle("ArtGallery Login");
 
         //lambda expression for shutting down program
@@ -25,7 +25,7 @@ public class MainLogin extends Application {
         });
 
         //instance for Login Scene
-        Scene scene = new LoginScene(500, 350, this);
+        Scene scene = new LoginScene(500, 350, window);
 
         window.setScene(scene);
         window.show();

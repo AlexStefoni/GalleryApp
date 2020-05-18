@@ -1,7 +1,27 @@
-{"User": [{
-    "password": "Ym9i",
-    "full_name": "Alex ",
-    "address": "acasa",
-    "artist": true,
-    "username": "alex"
-}]}
+{"User": [
+    {
+        "password": "cGVwZQ==",
+        "full_name": "pepe",
+        "address": "acasa",
+        "artist": true,
+        "phone": "pepe",
+        "username": "pepe"
+    },
+    {
+        "password": "c3VsZXJ1bGlqZTk5",
+        "full_name": "Petronela Vieru",
+        "address": "nicaiesti",
+        "artist": false,
+        "phone": "0784355525",
+        "username": "pepe_ella"
+    },
+    {
+        "password": "aGFoYQ==",
+        "full_name": "haha",
+        "address": "haha",
+        "artist": false,
+        "phone": "haha",
+        "username": "haha"
+    }
+
+]}
