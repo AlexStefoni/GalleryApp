@@ -38,5 +38,13 @@
         "artist": false,
         "phone": "ionel",
         "username": "ionel"
+    },
+    {
+        "password": "YQ==",
+        "full_name": "a",
+        "address": "a",
+        "artist": false,
+        "phone": "a",
+        "username": "a"
     }
 ]}

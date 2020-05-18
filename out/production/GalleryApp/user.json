@@ -38,5 +38,13 @@
         "artist": false,
         "phone": "ionel",
         "username": "ionel"
+    },
+    {
+        "password": "dA==",
+        "full_name": "t",
+        "address": "t",
+        "artist": false,
+        "phone": "t",
+        "username": "t"
     }
 ]}
