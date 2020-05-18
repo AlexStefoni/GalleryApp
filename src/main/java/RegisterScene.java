@@ -135,9 +135,12 @@ public class RegisterScene extends Application {
 
                             public void handle(MouseEvent e){
 
-                                LoginAfterRegister rs=new LoginAfterRegister();
-                                Stage stage = new Stage();
-                                rs.start(stage);
+                                Scene scene = new LoginAfterRegister(500, 350, primaryStage);
+                                Stage st=new Stage();
+                                st.setScene(scene);
+                                st.show();
+
+
 
                                 String name=nameField.getText();
                                 String address=addressField.getText();
