@@ -22,28 +22,16 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import json.JsonUtils;
 
-public class LoginAfterRegister extends Application {
+public class LoginAfterRegister extends Scene {
 
+    public LoginAfterRegister(double width, double height, Stage window) {
 
-    public void start(Stage primaryStage) {
-        primaryStage.setTitle("ArtGallery Login");
+        super(new GridPane(), width, height);
+
+        window.setTitle("ArtGallery Login");
 
         // Create the registration form grid pane
-        GridPane gridPane = createLoginFormPane();
-        // Add UI controls to the registration form grid pane
-        addUIControls(gridPane);
-        // Create a scene with registration form grid pane as the root node
-        Scene scene = new Scene(gridPane, 500, 350);
-        // Set the scene in primary stage
-        primaryStage.setScene(scene);
-
-        primaryStage.show();
-    }
-
-
-    private GridPane createLoginFormPane() {
-        // Instantiate a new Grid Pane
-        GridPane gridPane = new GridPane();
+        GridPane gridPane = (GridPane) this.getRoot();
 
         // Position the pane at the center of the screen, both vertically and horizontally
         gridPane.setAlignment(Pos.CENTER);
@@ -64,32 +52,27 @@ public class LoginAfterRegister extends Application {
         columnOneConstraints.setHalignment(HPos.RIGHT);
 
         // columnTwoConstraints will be applied to all the nodes placed in column two.
-        ColumnConstraints columnTwoConstrains = new ColumnConstraints(200,200, Double.MAX_VALUE);
+        ColumnConstraints columnTwoConstrains = new ColumnConstraints(200, 200, Double.MAX_VALUE);
         columnTwoConstrains.setHgrow(Priority.ALWAYS);
 
         gridPane.getColumnConstraints().addAll(columnOneConstraints, columnTwoConstrains);
 
-        return gridPane;
-    }
 
-    private void addUIControls(GridPane gridPane) {
-        // Add Header
+        // Add UI controls to the registration form grid pane
         Label headerLabel = new Label("Welcome to ArtGallery!");
         headerLabel.setFont(Font.font("Verdana", FontWeight.BOLD, 24));
-        gridPane.add(headerLabel, 0,0,2,1);
+        gridPane.add(headerLabel, 0, 0, 2, 1);
         GridPane.setHalignment(headerLabel, HPos.CENTER);
-        GridPane.setMargin(headerLabel, new Insets(20, 0,20,0));
-
-
+        GridPane.setMargin(headerLabel, new Insets(20, 0, 20, 0));
 
 
         Label subheaderLabel = new Label("Registration Successful! Please Login");
         subheaderLabel.setFont(Font.font("Arial", FontWeight.NORMAL, 14));
         subheaderLabel.setTextFill(Color.web("#008000"));
 
-        gridPane.add(subheaderLabel, 0,1,2,1);
+        gridPane.add(subheaderLabel, 0, 1, 2, 1);
         GridPane.setHalignment(subheaderLabel, HPos.CENTER);
-        GridPane.setMargin(subheaderLabel, new Insets(10, 0,10,0));
+        GridPane.setMargin(subheaderLabel, new Insets(10, 0, 10, 0));
 
         Label userName = new Label("Username:");
         gridPane.add(userName, 0, 2);
@@ -122,6 +105,22 @@ public class LoginAfterRegister extends Application {
                     wr.display();
 
                 }
+                else
+                {
+                    if(JsonUtils.ifArtist(username,password)==true){
+                        HomePageArtist hma=new HomePageArtist();
+                        Stage stage1=new Stage();
+                        hma.start(stage1);
+                    }
+                    else {
+                        HomePageClient hc=new HomePageClient();
+                        Stage stage1=new Stage();
+                        hc.start(stage1);
+
+                    }
+
+                }
+                window.close();
 
             }
 
@@ -135,15 +134,19 @@ public class LoginAfterRegister extends Application {
 
         btn.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
-            public void handle(MouseEvent e){
+            public void handle(MouseEvent e) {
 
-               RegisterScene rs=new RegisterScene();
+                RegisterScene rs = new RegisterScene();
                 Stage stage = new Stage();
                 rs.start(stage);
 
             }
 
         });
+
+
+        this.setRoot(gridPane);
+
 
     }
 }
