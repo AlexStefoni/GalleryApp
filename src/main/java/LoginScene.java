@@ -18,6 +18,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import json.JsonUtils;
 
+import java.io.FileNotFoundException;
 
 
 public class LoginScene extends Scene {
@@ -74,12 +75,20 @@ public class LoginScene extends Scene {
                   if(JsonUtils.ifArtist(username,password)==true){
                       HomePageArtist hma=new HomePageArtist();
                       Stage stage1=new Stage();
-                      hma.start(stage1);
+                      try {
+                          hma.start(stage1);
+                      } catch (FileNotFoundException ex) {
+                          ex.printStackTrace();
+                      }
                   }
                   else {
                       HomePageClient hc=new HomePageClient();
                       Stage stage1=new Stage();
-                      hc.start(stage1);
+                      try {
+                          hc.start(stage1);
+                      } catch (FileNotFoundException ex) {
+                          ex.printStackTrace();
+                      }
 
                   }
 
