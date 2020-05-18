@@ -93,7 +93,7 @@ public class AddArtwork extends Application {
 
 
 
-            Label userName = new Label("Enter details:");
+            Label userName = new Label("Enter details about the picture:");
             gp.add(userName, 1,2);
 
 

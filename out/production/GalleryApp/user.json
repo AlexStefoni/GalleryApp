@@ -3,7 +3,7 @@
         "password": "cGVwZQ==",
         "full_name": "pepe",
         "address": "acasa",
-        "artist": false,
+        "artist": true,
         "phone": "pepe",
         "username": "pepe"
     },
@@ -22,13 +22,6 @@
         "artist": true,
         "phone": "nu are",
         "username": "poezii"
-    },
-    {
-        "password": "cGVwZQ==",
-        "full_name": "pepe",
-        "address": "pepe",
-        "artist": true,
-        "phone": "pepe",
-        "username": "pepe"
     }
+
 ]}
