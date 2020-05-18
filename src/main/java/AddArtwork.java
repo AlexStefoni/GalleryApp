@@ -6,15 +6,20 @@ import javafx.event.EventHandler;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 public class AddArtwork extends Application {
 
@@ -60,12 +65,12 @@ public class AddArtwork extends Application {
 
             // create a Label
             Label label = new Label("No files selected");
-            gp.add(label,1,0);
+            gp.add(label,2,0);
 
             // create a Button
             Button button = new Button("Choose File");
-            gp.add(button, 1,1);
-
+            gp.add(button, 2,1);
+            Group root=new Group();
 
 
             // create an Event Handler
@@ -83,6 +88,33 @@ public class AddArtwork extends Application {
                                 label.setText(file.getAbsolutePath()
                                         + "  selected");
 
+                                FileInputStream inputstream = null;
+                                try {
+                                    inputstream = new FileInputStream(file.getAbsolutePath());
+                                    Image image = new Image(inputstream);
+                                    ImageView imageView = new ImageView(image);
+                                    imageView.setX(10);
+                                    imageView.setY(25);
+
+                                    //setting the fit height and width of the image view
+                                    imageView.setFitHeight(150);
+                                    imageView.setFitWidth(150);
+
+                                    //Setting the preserve ratio of the image view
+                                    imageView.setPreserveRatio(true);
+
+
+                                    VBox vb=new VBox();
+                                    vb.setSpacing(10);
+                                    vb.getChildren().add(imageView);
+                                    vb.setAlignment(Pos.CENTER_RIGHT);
+
+                                    root.getChildren().add(vb);
+
+                                } catch (FileNotFoundException ex) {
+                                    ex.printStackTrace();
+                                }
+
                             }
 
                         }
@@ -94,58 +126,58 @@ public class AddArtwork extends Application {
 
 
             Label userName = new Label("Enter details about the picture:");
-            gp.add(userName, 1,2);
+            gp.add(userName, 2,2);
 
 
 
-            Label artistLabel =new Label("Artist name:    ");
-            gp.add(artistLabel,0,3);
+            Label artistLabel =new Label("Artist name:");
+            gp.add(artistLabel,1,3);
             TextField artistName = new TextField();
             artistName.setMaxSize(300,200);
-            gp.add(artistName, 1,3);
+            gp.add(artistName, 2,3);
 
 
 
 
-            Label titleLabel =new Label("Title:    ");
-            gp.add(titleLabel,0,4);
+            Label titleLabel =new Label("Title:");
+            gp.add(titleLabel,1,4);
             TextField title = new TextField();
             title.setMaxSize(300,200);
-            gp.add(title,1,4);
+            gp.add(title,2,4);
 
 
-            Label priceLabel=new Label("Price:    ");
-            gp.add(priceLabel,0,5);
+            Label priceLabel=new Label("Price:");
+            gp.add(priceLabel,1,5);
             TextField price = new TextField();
             price.setMaxSize(300,200);
-            gp.add(price,1,5);
+            gp.add(price,2,5);
 
 
 
-            Label materialLabel=new Label("Material:    ");
-            gp.add(materialLabel,0,6);
+            Label materialLabel=new Label("Material:");
+            gp.add(materialLabel,1,6);
             TextField material = new TextField();
             material.setMaxSize(300,200);
-            gp.add(material,1,6);
+            gp.add(material,2,6);
 
 
 
-            Label sizeLabel=new Label("Size:    ");
-            gp.add(sizeLabel,0,7);
+            Label sizeLabel=new Label("Size:");
+            gp.add(sizeLabel,1,7);
             TextField size = new TextField();
             size.setMaxSize(300,200);
-            gp.add(size,1,7);
+            gp.add(size,2,7);
 
 
-            Label stockLabel=new Label("Status:    ");
-            gp.add(stockLabel,0,8);
+            Label stockLabel=new Label("Status:");
+            gp.add(stockLabel,1,8);
             TextField stock = new TextField();
             stock.setMaxSize(300,200);
-            gp.add(stock,1,8);
+            gp.add(stock,2,8);
 
 
             Button save=new Button("Save");
-            gp.add(save,1,9);
+            gp.add(save,2,9);
 
 
 
@@ -161,8 +193,10 @@ public class AddArtwork extends Application {
             });
 
 
-            gp.add(clearAll, 1,10,2,1);
-            Scene scene = new Scene(gp, 800, 500);
+            gp.add(clearAll, 2,10,2,1);
+
+            root.getChildren().add(gp);
+            Scene scene = new Scene(root, 800, 500);
 
 
             // set the scene
