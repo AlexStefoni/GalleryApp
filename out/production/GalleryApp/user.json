@@ -3,7 +3,7 @@
         "password": "cGVwZQ==",
         "full_name": "pepe",
         "address": "acasa",
-        "artist": true,
+        "artist": false,
         "phone": "pepe",
         "username": "pepe"
     },
