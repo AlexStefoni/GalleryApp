@@ -14,5 +14,13 @@
         "size": "20 x 30",
         "price": 99.99,
         "title": "ceva"
+    },
+    {
+        "author_name": "alex",
+        "picture_path": "assets/pictures/f1.jpeg",
+        "material": "thin air",
+        "size": "20 x 30",
+        "price": 99.99,
+        "title": "ceva"
     }
 ]}

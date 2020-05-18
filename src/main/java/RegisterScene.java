@@ -71,21 +71,21 @@ public class RegisterScene extends Application {
 
         // Add Password Label
         Label passwordLabel = new Label("Password : ");
-        gridPane.add(passwordLabel, 0, 4);
+        gridPane.add(passwordLabel, 0, 5);
 
         // Add Password Field
         PasswordField passwordField = new PasswordField();
         passwordField.setPrefHeight(40);
-        gridPane.add(passwordField, 1, 4);
+        gridPane.add(passwordField, 1, 5);
 
 
         Label phoneLabel = new Label("Phone : ");
-        gridPane.add(phoneLabel, 0, 5);
+        gridPane.add(phoneLabel, 0, 4);
 
         // Add Phone Field
         TextField phoneField = new TextField();
         phoneField.setPrefHeight(40);
-        gridPane.add(phoneField, 1, 5);
+        gridPane.add(phoneField, 1, 4);
 
 
         CheckBox checkBox1 = new CheckBox("I want to be Artist");
@@ -134,9 +134,8 @@ public class RegisterScene extends Application {
                         submitButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
                             public void handle(MouseEvent e){
-
-                                Scene scene = new LoginAfterRegister(500, 350, primaryStage);
                                 Stage st=new Stage();
+                                Scene scene = new LoginAfterRegister(500, 350, st);
                                 st.setScene(scene);
                                 st.show();
 

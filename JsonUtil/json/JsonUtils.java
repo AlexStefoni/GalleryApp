@@ -59,7 +59,7 @@ public class JsonUtils {
 
         JSONArray arr=obj.getJSONArray("User");
         for(int i=0;i<arr.length();i++){
-            System.out.println(decode(arr.getJSONObject(i).get("password").toString()));
+            //System.out.println(decode(arr.getJSONObject(i).get("password").toString()));
             if((arr.getJSONObject(i).get("username").toString().equals(u)) &&
                     (decode(arr.getJSONObject(i).get("password").toString()).equals(p)))
             return true;
@@ -81,5 +81,20 @@ public class JsonUtils {
         byte[] decodedBytes = Base64.getDecoder().decode(s);
         String decodedString = new String(decodedBytes);
         return decodedString;
+    }
+    public static Boolean ifArtist(String  u,String p){
+
+        JSONObject obj = JsonUtils.getJSONObjectFromFile("/user.json");
+
+
+        JSONArray arr=obj.getJSONArray("User");
+        for(int i=0;i<arr.length();i++){
+            //System.out.println(decode(arr.getJSONObject(i).get("password").toString()));
+            if((arr.getJSONObject(i).get("username").toString().equals(u)) &&
+                    (decode(arr.getJSONObject(i).get("password").toString()).equals(p))) 
+                return ((Boolean) arr.getJSONObject(i).get("artist"));
+        }
+        
+        return false;
     }
 }
