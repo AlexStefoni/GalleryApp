@@ -122,14 +122,6 @@ public class LoginAfterRegister extends Application {
                     wr.display();
 
                 }
-                else
-                {
-                    HomePageClient hm=new HomePageClient();
-                    Stage stage=new Stage();
-                    hm.start(stage);
-
-                }
-
 
             }
 

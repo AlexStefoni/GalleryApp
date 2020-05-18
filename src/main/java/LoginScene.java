@@ -71,17 +71,13 @@ public class LoginScene extends Scene {
                 }
                 else
                 {
-                  if(JsonUtils.ifArtist(username,password)==false){
-                    HomePageClient hm=new HomePageClient();
-                    Stage stage=new Stage();
-                    hm.start(stage);}
-
-                  else {
+                  if(JsonUtils.ifArtist(username,password)==true){
                       HomePageArtist hma=new HomePageArtist();
                       Stage stage1=new Stage();
                       hma.start(stage1);
-
                   }
+
+
 
                     window.close();
                   }
