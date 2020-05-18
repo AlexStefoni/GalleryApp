@@ -51,9 +51,29 @@ public class HomePageClient extends Application {
         Button btn2 =new Button("History");
         leftControl.getChildren().add(btn2);
 
+        Button btn3 =new Button("Log out");
+        leftControl.getChildren().add(btn3);
+
+
+        btn3.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+            public void handle(MouseEvent e){
+
+                Stage stage=new Stage();
+                Scene scene = new LoginScene(500, 350, stage);
+
+                stage.setScene(scene);
+                stage.show();
+                primaryStage.close();
+
+            }
+
+        });
+
+
 
         FileInputStream inputstream = null;
-        inputstream = new FileInputStream("C:\\Users\\user\\Desktop\\unnamed.jpg");
+        inputstream = new FileInputStream("assets/pictures/unnamed.jpg");
         Image image = new Image(inputstream);
         ImageView imageView = new ImageView(image);
         imageView.setX(10);

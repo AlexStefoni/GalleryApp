@@ -55,12 +55,14 @@ public class HomePageArtist extends Application {
         Button btn2 =new Button("View orders");
         Button btn3 =new Button("See comments");
         Button btn4 =new Button("Modify details");
+        Button btn5=new Button("Log out");
 
 
         leftControl.getChildren().add(btn1);
         leftControl.getChildren().add(btn2);
         leftControl.getChildren().add(btn3);
         leftControl.getChildren().add(btn4);
+        leftControl.getChildren().add(btn5);
 
         btn1.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
@@ -74,8 +76,24 @@ public class HomePageArtist extends Application {
 
         });
 
+
+        btn5.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+            public void handle(MouseEvent e){
+
+                Stage stage=new Stage();
+                Scene scene = new LoginScene(500, 350, stage);
+
+               stage.setScene(scene);
+                stage.show();
+                primaryStage.close();
+
+            }
+
+        });
+
         FileInputStream inputstream = null;
-        inputstream = new FileInputStream("C:\\Users\\user\\Desktop\\unnamed.jpg");
+        inputstream = new FileInputStream("assets/pictures/unnamed.jpg");
         Image image = new Image(inputstream);
         ImageView imageView = new ImageView(image);
         imageView.setX(10);

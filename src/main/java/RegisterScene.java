@@ -134,9 +134,8 @@ public class RegisterScene extends Application {
                         submitButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
                             public void handle(MouseEvent e){
-
-                                Scene scene = new LoginAfterRegister(500, 350, primaryStage);
                                 Stage st=new Stage();
+                                Scene scene = new LoginAfterRegister(500, 350, st);
                                 st.setScene(scene);
                                 st.show();
 

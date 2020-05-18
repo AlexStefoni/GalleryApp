@@ -120,21 +120,24 @@ public class LoginAfterRegister extends Scene {
                     }
                     else {
                         HomePageClient hc=new HomePageClient();
-                        Stage stage=new Stage();
+                        Stage stage1=new Stage();
                         try {
-                            hc.start(stage);
+                            hc.start(stage1);
                         } catch (FileNotFoundException ex) {
                             ex.printStackTrace();
                         }
 
                     }
 
+
+
+                    window.close();
                 }
-                window.close();
 
             }
 
         });
+
 
         Button btn = new Button("Register");
         HBox hbBtn = new HBox(10);
