@@ -13,6 +13,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -176,7 +177,10 @@ public class AddArtwork extends Application {
             gp.add(stock,2,8);
 
 
-            Button save=new Button("Save");
+            Button save=new Button("Save and Exit");
+
+
+
             gp.add(save,2,9);
 
 
@@ -201,6 +205,22 @@ public class AddArtwork extends Application {
 
             // set the scene
             stage.setScene(scene);
+
+
+            save.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+                public void handle(MouseEvent e){
+
+                    if ((artistName.getText() != null && !artistName.getText().isEmpty() && price.getText() != null
+                            && !price.getText().isEmpty()&& material.getText() != null
+                            && !material.getText().isEmpty() && size.getText() != null
+                            && !size.getText().isEmpty() && title.getText()!=null && !title.getText().isEmpty() && stock.getText()!=null
+                    && !stock.getText().isEmpty() && price.getText()!=null && !price.getText().isEmpty()))
+                    stage.close();
+
+                }
+
+            });
 
             stage.show();
         }
