@@ -30,4 +30,7 @@ public class User {
 
         return obj;
     }
+    public String name(){
+        return this.username;
+    }
 }
