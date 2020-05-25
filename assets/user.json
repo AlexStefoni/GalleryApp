@@ -1,0 +1,50 @@
+{"User": [
+    {
+        "password": "cGVwZQ==",
+        "full_name": "pepe",
+        "address": "acasa",
+        "artist": true,
+        "phone": "pepe",
+        "username": "pepe"
+    },
+    {
+        "password": "c3VsZXJ1bGlqZTk5",
+        "full_name": "Petronela Vieru",
+        "address": "nicaiesti",
+        "artist": false,
+        "phone": "0784355525",
+        "username": "pepe_ella"
+    },
+    {
+        "password": "MTIzNDU2",
+        "full_name": "Marin Sorescu",
+        "address": "mormant",
+        "artist": true,
+        "phone": "nu are",
+        "username": "poezii"
+    },
+    {
+        "password": "YWxleA==",
+        "full_name": "alex",
+        "address": "alex",
+        "artist": false,
+        "phone": "alex",
+        "username": "alex"
+    },
+    {
+        "password": "MTIzNDU2",
+        "full_name": "ionel",
+        "address": "ionel",
+        "artist": false,
+        "phone": "ionel",
+        "username": "ionel"
+    },
+    {
+        "password": "YQ==",
+        "full_name": "a",
+        "address": "a",
+        "artist": false,
+        "phone": "a",
+        "username": "a"
+    }
+]}

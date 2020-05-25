@@ -16,16 +16,16 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import json.JsonUtils;
+
+import java.io.FileNotFoundException;
+
 
 public class LoginScene extends Scene {
 
-    public LoginScene(double width, double height, MainLogin app) {
+    public LoginScene(double width, double height, Stage window) {
         super(new GridPane(), width, height);
 
-        /*used Grid panelling layout style for getting user input
-		instace for Grid Panel with positioning on scene
-		and positioning each block
-		*/
         GridPane grid = (GridPane) this.getRoot();
 
         grid.setAlignment(Pos.CENTER);
@@ -58,6 +58,49 @@ public class LoginScene extends Scene {
         hbBtn2.getChildren().add(btn2);
         grid.add(hbBtn2, 1, 4);
 
+        btn2.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+            public void handle(MouseEvent e) {
+
+                String username = userBox.getText();
+                String password = passBox.getText();
+                if (JsonUtils.credentialTest(username, password) == false)
+                {
+                    WrongCredentials wr=new WrongCredentials();
+                    wr.display();
+
+                }
+                else
+                {
+                  if(JsonUtils.ifArtist(username,password)==true){
+                      HomePageArtist hma=new HomePageArtist();
+                      Stage stage1=new Stage();
+                      try {
+                          hma.start(stage1);
+                      } catch (FileNotFoundException ex) {
+                          ex.printStackTrace();
+                      }
+                  }
+                  else {
+                      HomePageClient hc=new HomePageClient();
+                      Stage stage1=new Stage();
+                      try {
+                          hc.start(stage1);
+                      } catch (FileNotFoundException ex) {
+                          ex.printStackTrace();
+                      }
+
+                  }
+
+
+
+                    window.close();
+                  }
+
+                }
+
+        });
+
         Button btn = new Button("Register");
         HBox hbBtn = new HBox(10);
         hbBtn.setAlignment(Pos.BOTTOM_LEFT);
@@ -65,7 +108,18 @@ public class LoginScene extends Scene {
         grid.add(hbBtn, 1, 5);
 
 
+        btn.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
+            public void handle(MouseEvent e){
+
+                RegisterScene rs=new RegisterScene();
+                Stage stage = new Stage();
+                rs.start(stage);
+                window.close();
+
+            }
+
+        });
 
         this.setRoot(grid);
     }
