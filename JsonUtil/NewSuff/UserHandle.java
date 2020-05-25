@@ -128,4 +128,12 @@ public class UserHandle {
         }
         return false;
     }
+
+    public boolean fileExists(){
+
+        File file=new File("USER//account.json");
+        if (file.length() == 0) return false;
+        return true;
+    }
+
 }

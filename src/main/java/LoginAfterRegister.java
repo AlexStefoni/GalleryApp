@@ -1,5 +1,6 @@
 package main.java;
 
+import NewSuff.UserHandle;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.geometry.HPos;
@@ -101,7 +102,10 @@ public class LoginAfterRegister extends Scene {
 
                 String username = userBox.getText();
                 String password = passBox.getText();
-                if (JsonUtils.credentialTest(username, password) == false)
+
+                UserHandle account=new UserHandle();
+
+                if (account.CredentialTest(username, password) == false)
                 {
                     WrongCredentials wr=new WrongCredentials();
                     wr.display();
@@ -109,7 +113,7 @@ public class LoginAfterRegister extends Scene {
                 }
                 else
                 {
-                    if(JsonUtils.ifArtist(username,password)==true){
+                    if(account.ifArtist(username,password)==true){
                         HomePageArtist hma=new HomePageArtist();
                         Stage stage1=new Stage();
                         try {
