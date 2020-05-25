@@ -32,8 +32,8 @@ public class ArtworkFrame extends Scene {
         imageView.setY(25);
 
         //setting the fit height and width of the image view
-        imageView.setFitHeight(400);
-        imageView.setFitWidth(400);
+        imageView.setFitHeight(260);
+        imageView.setFitWidth(260);
 
         //Setting the preserve ratio of the image view
         imageView.setPreserveRatio(true);
