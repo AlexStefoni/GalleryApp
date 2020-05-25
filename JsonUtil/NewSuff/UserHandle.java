@@ -114,19 +114,17 @@ public class UserHandle {
 
         return false;
     }
-    public Boolean ifAllreadyExists(String u,String p) {
-
+    public Boolean ifAllreadyExists(String u) {
+        if(!this.fileExists())return true;
         obj = new JSONObject(this.getJSONStringFromFile());
 
 
         JSONArray arr = obj.getJSONArray("USERS");
         for (int i = 0; i < arr.length(); i++) {
             //System.out.println(decode(arr.getJSONObject(i).get("password").toString()));
-            if ((arr.getJSONObject(i).get("username").toString().equals(u)) &&
-                    (decode(arr.getJSONObject(i).get("password").toString()).equals(p)))
-                return true;
+            if ((arr.getJSONObject(i).get("username").toString().equals(u))) return false;
         }
-        return false;
+        return true;
     }
 
     public boolean fileExists(){
