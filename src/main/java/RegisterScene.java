@@ -1,5 +1,6 @@
 package main.java;
 
+import NewSuff.UserHandle;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -149,9 +150,11 @@ public class RegisterScene extends Application {
                                 boolean isSelected = checkBox1.isSelected();
                                 //writing the user assets
                                 //replace User(,,false,,); with the value from the checkbox[SOLVED]
-                                //also phone ? i don/t remeber any phone .
+                                //also phone ? i don/t remember any phone .
                                 User user_register=new User(user,password,isSelected,name,address,phone);
-                                json.JsonUtils.registerNewUser(user_register);
+                                //json.JsonUtils.registerNewUser(user_register);
+                                UserHandle newAccount=new UserHandle();
+                                newAccount.RegUser(user_register);
                                 primaryStage.close();
 
 

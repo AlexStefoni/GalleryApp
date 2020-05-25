@@ -1,6 +1,7 @@
 package main.java;
 
 
+import NewSuff.UserHandle;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -64,40 +65,45 @@ public class LoginScene extends Scene {
 
                 String username = userBox.getText();
                 String password = passBox.getText();
-                if (JsonUtils.credentialTest(username, password) == false)
-                {
-                    WrongCredentials wr=new WrongCredentials();
-                    wr.display();
 
+                UserHandle account = new UserHandle();
+
+
+                if (account.fileExists()==false) {
+                    NoUsersYet noU = new NoUsersYet();
+                    noU.display();
                 }
-                else
-                {
-                  if(JsonUtils.ifArtist(username,password)==true){
-                      HomePageArtist hma=new HomePageArtist();
-                      Stage stage1=new Stage();
-                      try {
-                          hma.start(stage1);
-                      } catch (FileNotFoundException ex) {
-                          ex.printStackTrace();
-                      }
-                  }
-                  else {
-                      HomePageClient hc=new HomePageClient();
-                      Stage stage1=new Stage();
-                      try {
-                          hc.start(stage1);
-                      } catch (FileNotFoundException ex) {
-                          ex.printStackTrace();
-                      }
+                else{
+                    if (account.CredentialTest(username, password) == false) {
+                        WrongCredentials wr = new WrongCredentials();
+                        wr.display();
 
-                  }
+                    } else {
+                        if (account.ifArtist(username, password) == true) {
+                            HomePageArtist hma = new HomePageArtist();
+                            Stage stage1 = new Stage();
+                            try {
+                                hma.start(stage1);
+                            } catch (FileNotFoundException ex) {
+                                ex.printStackTrace();
+                            }
+                        } else {
+                            HomePageClient hc = new HomePageClient();
+                            Stage stage1 = new Stage();
+                            try {
+                                hc.start(stage1);
+                            } catch (FileNotFoundException ex) {
+                                ex.printStackTrace();
+                            }
+
+                        }
 
 
-
-                    window.close();
-                  }
-
+                        window.close();
+                    }
                 }
+                }
+
 
         });
 
