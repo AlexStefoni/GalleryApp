@@ -46,5 +46,13 @@
         "artist": false,
         "phone": "a",
         "username": "a"
+    },
+    {
+        "password": "YWxleA==",
+        "full_name": "alex",
+        "address": "alex",
+        "artist": true,
+        "phone": "alex",
+        "username": "alex"
     }
 ]}

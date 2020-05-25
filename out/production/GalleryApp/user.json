@@ -40,11 +40,19 @@
         "username": "ionel"
     },
     {
-        "password": "dA==",
-        "full_name": "t",
-        "address": "t",
+        "password": "YQ==",
+        "full_name": "a",
+        "address": "a",
         "artist": false,
-        "phone": "t",
-        "username": "t"
+        "phone": "a",
+        "username": "a"
+    },
+    {
+        "password": "YWxleA==",
+        "full_name": "alex",
+        "address": "alex",
+        "artist": true,
+        "phone": "alex",
+        "username": "alex"
     }
 ]}
