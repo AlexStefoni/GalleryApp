@@ -1,0 +1,18 @@
+{"USERS": [
+    {
+        "password": "Ym9i",
+        "full_name": "Alex ",
+        "address": "acasa",
+        "artist": true,
+        "phone": "000",
+        "username": "alex"
+    },
+    {
+        "password": "YWxleA==",
+        "full_name": "Alex ",
+        "address": "acasa",
+        "artist": true,
+        "phone": "000",
+        "username": "bob"
+    }
+]}

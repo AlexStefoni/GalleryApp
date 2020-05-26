@@ -134,4 +134,27 @@ public class UserHandle {
         return true;
     }
 
+    public User getUser(String u,String p){
+        User user=new User("0","0",false,"0","0","0");
+        if(!this.fileExists()) {
+            obj = new JSONObject(this.getJSONStringFromFile());
+
+            JSONArray arr=obj.getJSONArray("USERS");
+            for(int i=0;i<arr.length();i++){
+                //System.out.println(decode(arr.getJSONObject(i).get("password").toString()));
+                if((arr.getJSONObject(i).get("username").toString().equals(u)) &&
+                        (decode(arr.getJSONObject(i).get("password").toString()).equals(p)))
+                {
+                    user=new User(arr.getJSONObject(i).get("username").toString(),
+                            arr.getJSONObject(i).get("username").toString(),
+                            arr.getJSONObject(i).getBoolean("artist"),
+                            arr.getJSONObject(i).get("full_name").toString(),
+                            arr.getJSONObject(i).get("address").toString(),
+                            arr.getJSONObject(i).get("phone").toString()
+                    );
+                }
+            }
+        }
+        return user;
+    }
 }
