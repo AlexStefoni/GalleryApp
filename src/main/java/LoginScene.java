@@ -79,6 +79,7 @@ public class LoginScene extends Scene {
                         wr.display();
 
                     } else {
+                        account.setStatus(username);
                         if (account.ifArtist(username, password) == true) {
                             HomePageArtist hma = new HomePageArtist();
                             Stage stage1 = new Stage();

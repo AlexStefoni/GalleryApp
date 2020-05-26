@@ -7,20 +7,20 @@ public class Artwork {
     private String title;
     private String picture_path;
     private String material;
-    private double price;
+    private String price;
     private String size;
 
     public Artwork(
                    String title,
                    String material,
-                   double price,
-                   int size_x,
-                   int size_y){
+                   String price,
+                   String size
+                   ){
         this.title=title;
         //this.picture_path=ArtworkUtils.imageReader(picture_path);
         this.material=material;
         this.price=price;
-        this.size=size_x+" x "+size_y;
+        this.size=size;
 
     }
 
@@ -35,5 +35,8 @@ public class Artwork {
     }
     public void setPicPath(String path){
         this.picture_path=path;
+    }
+    public String getRelativePath(){
+        return this.picture_path;
     }
 }
