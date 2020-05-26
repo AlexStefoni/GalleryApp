@@ -114,19 +114,17 @@ public class UserHandle {
 
         return false;
     }
-    public Boolean ifAllreadyExists(String u,String p) {
-
+    public Boolean ifAllreadyExists(String u) {
+        if(!this.fileExists())return true;
         obj = new JSONObject(this.getJSONStringFromFile());
 
 
         JSONArray arr = obj.getJSONArray("USERS");
         for (int i = 0; i < arr.length(); i++) {
             //System.out.println(decode(arr.getJSONObject(i).get("password").toString()));
-            if ((arr.getJSONObject(i).get("username").toString().equals(u)) &&
-                    (decode(arr.getJSONObject(i).get("password").toString()).equals(p)))
-                return true;
+            if ((arr.getJSONObject(i).get("username").toString().equals(u))) return false;
         }
-        return false;
+        return true;
     }
 
     public boolean fileExists(){
@@ -136,4 +134,64 @@ public class UserHandle {
         return true;
     }
 
+    public User getStatus(){
+
+        String name="";
+        File statFile=new File("USER//status.txt");
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(statFile));
+            name=br.readLine();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        User user=new User("0","0",false,"0","0","0");
+
+            obj = new JSONObject(this.getJSONStringFromFile());
+
+            JSONArray arr=obj.getJSONArray("USERS");
+            for(int i=0;i<arr.length();i++){
+                //System.out.println(decode(arr.getJSONObject(i).get("password").toString()));
+                if((arr.getJSONObject(i).get("username").toString().equals(name))){
+                    user=new User(arr.getJSONObject(i).get("username").toString(),
+                            arr.getJSONObject(i).get("username").toString(),
+                            arr.getJSONObject(i).getBoolean("artist"),
+                            arr.getJSONObject(i).get("full_name").toString(),
+                            arr.getJSONObject(i).get("address").toString(),
+                            arr.getJSONObject(i).get("phone").toString()
+                    );
+                }
+            }
+        return user;
+    }
+    public void setStatus(String name){
+        try {
+
+            File myFile = new File("USER//status.txt");
+
+            if (myFile.createNewFile()) {
+                System.out.println("File is created!");
+            } else {
+                System.out.println("File already exists.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try{
+
+        FileWriter myWriter = new FileWriter("USER//status.txt");
+        myWriter.write(name);
+        myWriter.close();
+        System.out.println("Successfully wrote to the file.");
+
+    } catch(IOException e){
+        System.out.println("An error occurred.");
+        e.printStackTrace();
+    }
+    }
 }

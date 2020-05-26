@@ -113,6 +113,7 @@ public class LoginAfterRegister extends Scene {
                 }
                 else
                 {
+                    account.setStatus(username);
                     if(account.ifArtist(username,password)==true){
                         HomePageArtist hma=new HomePageArtist();
                         Stage stage1=new Stage();
@@ -122,7 +123,7 @@ public class LoginAfterRegister extends Scene {
                             ex.printStackTrace();
                         }
                     }
-                    else {
+                    else {/*
                         HomePageClient hc=new HomePageClient();
                         Stage stage1=new Stage();
                         try {
@@ -130,7 +131,7 @@ public class LoginAfterRegister extends Scene {
                         } catch (FileNotFoundException ex) {
                             ex.printStackTrace();
                         }
-
+                        */
                     }
 
 

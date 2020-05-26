@@ -1,5 +1,8 @@
 package main.java;
 
+import NewSuff.ArtHandle;
+import NewSuff.UserHandle;
+import items.Artwork;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -23,7 +26,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 public class AddArtwork extends Application {
-
+    String absPath;
+    //String relativePath;
     // launch the application
     public void start(Stage stage)
     {
@@ -74,6 +78,7 @@ public class AddArtwork extends Application {
             Group root=new Group();
 
 
+
             // create an Event Handler
             EventHandler<ActionEvent> event =
                     new EventHandler<ActionEvent>() {
@@ -88,6 +93,8 @@ public class AddArtwork extends Application {
 
                                 label.setText(file.getAbsolutePath()
                                         + "  selected");
+
+                                absPath=file.getAbsolutePath();
 
                                 FileInputStream inputstream = null;
                                 try {
@@ -210,6 +217,8 @@ public class AddArtwork extends Application {
             // set the scene
             stage.setScene(scene);
 
+            UserHandle thisUser=new UserHandle();
+            ArtHandle thisArtwork=new ArtHandle();
 
             save.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
@@ -219,9 +228,15 @@ public class AddArtwork extends Application {
                             && !price.getText().isEmpty()&& material.getText() != null
                             && !material.getText().isEmpty() && size.getText() != null
                             && !size.getText().isEmpty() && title.getText()!=null && !title.getText().isEmpty() && stock.getText()!=null
-                    && !stock.getText().isEmpty() && price.getText()!=null && !price.getText().isEmpty()))
-                    stage.close();
+                    && !stock.getText().isEmpty() && price.getText()!=null && !price.getText().isEmpty())) {
 
+                        Artwork art=new Artwork(title.getText(),material.getText(),price.getText(),size.getText());
+                        thisArtwork.regArt(thisUser.getStatus(),art,absPath);
+
+                        //relativePath=art.getRelativePath(); // after you have realive path into the var
+
+                        stage.close();
+                    }
                 }
 
             });

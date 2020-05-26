@@ -30,4 +30,10 @@ public class User {
 
         return obj;
     }
+    public String name(){
+        return this.username;
+    }
+    public String toString(){
+        return " "+this.username+" "+this.password+" "+this.artist+" "+this.full_name+" "+this.address+" "+this.phone;
+    }
 }

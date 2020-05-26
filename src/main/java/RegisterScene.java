@@ -132,37 +132,39 @@ public class RegisterScene extends Application {
             public void handle(ActionEvent e) {
                 if ((nameField.getText() != null && !nameField.getText().isEmpty() && addressField.getText() != null && !addressField.getText().isEmpty()&& passwordField.getText() != null && !passwordField.getText().isEmpty() && phoneField.getText() != null && !phoneField.getText().isEmpty() )) {
                     {
-                        submitButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                        UserHandle check =new UserHandle();
+                        if(check.ifAllreadyExists(nameField.getText())) {
+                            submitButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
-                            public void handle(MouseEvent e){
-                                Stage st=new Stage();
-                                Scene scene = new LoginAfterRegister(500, 350, st);
-                                st.setScene(scene);
-                                st.show();
-
-
-
-                                String name=nameField.getText();
-                                String address=addressField.getText();
-                                String phone=phoneField.getText();
-                                String password=passwordField.getText();
-                                String user=userField.getText();
-                                boolean isSelected = checkBox1.isSelected();
-                                //writing the user assets
-                                //replace User(,,false,,); with the value from the checkbox[SOLVED]
-                                //also phone ? i don/t remember any phone .
-                                User user_register=new User(user,password,isSelected,name,address,phone);
-                                //json.JsonUtils.registerNewUser(user_register);
-                                UserHandle newAccount=new UserHandle();
-                                newAccount.RegUser(user_register);
-                                primaryStage.close();
+                                public void handle(MouseEvent e) {
+                                    Stage st = new Stage();
+                                    Scene scene = new LoginAfterRegister(500, 350, st);
+                                    st.setScene(scene);
+                                    st.show();
 
 
+                                    String name = nameField.getText();
+                                    String address = addressField.getText();
+                                    String phone = phoneField.getText();
+                                    String password = passwordField.getText();
+                                    String user = userField.getText();
+                                    boolean isSelected = checkBox1.isSelected();
+                                    //writing the user assets
+                                    //replace User(,,false,,); with the value from the checkbox[SOLVED]
+                                    //also phone ? i don/t remember any phone .
+                                    User user_register = new User(user, password, isSelected, name, address, phone);
+                                    //json.JsonUtils.registerNewUser(user_register);
+                                    UserHandle newAccount = new UserHandle();
+                                    newAccount.RegUser(user_register);
+                                    primaryStage.close();
 
 
-                            }
+                                }
 
-                        });
+                            });
+                        }else{
+                            label.setText("Username taken");
+                        }
                     }
                 } else {
                     label.setText("There are still empty fields");
