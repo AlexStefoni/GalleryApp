@@ -51,7 +51,7 @@ public class HomePageClient extends Application {
         Button btn2 =new Button("History");
         leftControl.getChildren().add(btn2);
 
-        Button btn3 =new Button("Log out");
+        Button btn3 =new Button("Logout");
         leftControl.getChildren().add(btn3);
 
 
