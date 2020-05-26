@@ -1,6 +1,7 @@
 package main.java;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -66,8 +67,32 @@ public class HomePageClient extends Application {
        topImview.setFitWidth(100);
 
         //border structure of right split pane
+
+
+
+        Button button1 = new Button();
+        button1.setGraphic(topImview);
+        button1.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+
+
+                Stage st=new Stage();
+                try {
+                    Scene scene2=new ArtworkFrame(800,500,st,top);
+                    st.setScene(scene2);
+                    st.show();
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+
+
+
+            }
+        });
+
         GridPane topPane = new GridPane();
-        topPane.getChildren().add(topImview);
+        topPane.getChildren().add(button1);
+
         ///////////////////////////////////////////////
 
         ////////////////////////////////////////////////
@@ -85,8 +110,30 @@ public class HomePageClient extends Application {
         bottomImview.setFitHeight(100);
        bottomImview.setFitWidth(100);
 
+
+
+        Button button2 = new Button();
+        button2.setGraphic(bottomImview);
+        button2.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+
+
+                Stage st=new Stage();
+                try {
+                    Scene scene2=new ArtworkFrame(800,500,st,bottom);
+                    st.setScene(scene2);
+                    st.show();
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+
+
+
+            }
+        });
+
         GridPane bottomPane = new GridPane();
-        bottomPane.getChildren().add(bottomImview);
+        bottomPane.getChildren().add(button2);
         ///////////////////////////////////////////////
 
         ////////////////////////////////////////////////
@@ -104,8 +151,29 @@ public class HomePageClient extends Application {
         leftImview.setFitHeight(100);
         leftImview.setFitWidth(100);
 
+
+        Button button3 = new Button();
+        button3.setGraphic(leftImview);
+        button3.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+
+
+                Stage st=new Stage();
+                try {
+                    Scene scene2=new ArtworkFrame(800,500,st,left);
+                    st.setScene(scene2);
+                    st.show();
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+
+
+
+            }
+        });
+
         GridPane leftPane = new GridPane();
-        leftPane.getChildren().add(leftImview);
+        leftPane.getChildren().add(button3);
         ///////////////////////////////////////////////
 
         ////////////////////////////////////////////////
@@ -123,8 +191,29 @@ public class HomePageClient extends Application {
         rightImview.setFitHeight(100);
         rightImview.setFitWidth(100);
 
+
+        Button button4 = new Button();
+        button4.setGraphic(rightImview);
+        button4.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+
+
+                Stage st=new Stage();
+                try {
+                    Scene scene2=new ArtworkFrame(800,500,st,right);
+                    st.setScene(scene2);
+                    st.show();
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+
+
+
+            }
+        });
+
         GridPane rightPane = new GridPane();
-        rightPane.getChildren().add(rightImview);
+        rightPane.getChildren().add(button4);
 
         ///////////////////////////////////////////////
 
@@ -143,8 +232,29 @@ public class HomePageClient extends Application {
        centerImview.setFitHeight(100);
         centerImview.setFitWidth(100);
 
+
+        Button button5 = new Button();
+        button5.setGraphic(centerImview);
+        button5.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+
+
+                Stage st=new Stage();
+                try {
+                    Scene scene2=new ArtworkFrame(800,500,st,center);
+                    st.setScene(scene2);
+                    st.show();
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+
+
+
+            }
+        });
+
         GridPane centerPane = new GridPane();
-        centerPane.getChildren().add(centerImview);
+        centerPane.getChildren().add(button5);
         ///////////////////////////////////////////////
 
 
