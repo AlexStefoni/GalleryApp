@@ -88,7 +88,7 @@ public class LoginScene extends Scene {
                             } catch (FileNotFoundException ex) {
                                 ex.printStackTrace();
                             }
-                        } else {
+                        } else {/*
                             HomePageClient hc = new HomePageClient();
                             Stage stage1 = new Stage();
                             try {
@@ -96,7 +96,7 @@ public class LoginScene extends Scene {
                             } catch (FileNotFoundException ex) {
                                 ex.printStackTrace();
                             }
-
+                                */
                         }
 
 

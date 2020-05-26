@@ -89,7 +89,7 @@ public class HomePageArtist extends Application {
             }
 
         });
-
+/*
         FileInputStream inputstream = null;
         inputstream = new FileInputStream("assets/pictures/unnamed.jpg");
         Image image = new Image(inputstream);
@@ -126,9 +126,9 @@ public class HomePageArtist extends Application {
         });
 
 
-
+*/
         rightControl.setAlignment(Pos.CENTER);
-        rightControl.getChildren().add(button1);
+  //      rightControl.getChildren().add(button1);
 
         splitPane.getItems().addAll(leftControl, rightControl);
         Scene scene=new Scene(splitPane,800,500);

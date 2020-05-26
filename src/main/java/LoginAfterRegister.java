@@ -123,7 +123,7 @@ public class LoginAfterRegister extends Scene {
                             ex.printStackTrace();
                         }
                     }
-                    else {
+                    else {/*
                         HomePageClient hc=new HomePageClient();
                         Stage stage1=new Stage();
                         try {
@@ -131,7 +131,7 @@ public class LoginAfterRegister extends Scene {
                         } catch (FileNotFoundException ex) {
                             ex.printStackTrace();
                         }
-
+                        */
                     }
 
 
