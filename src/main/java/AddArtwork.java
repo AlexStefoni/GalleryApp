@@ -97,12 +97,16 @@ public class AddArtwork extends Application {
                                     imageView.setX(10);
                                     imageView.setY(25);
 
+
+
                                     //setting the fit height and width of the image view
                                     imageView.setFitHeight(150);
                                     imageView.setFitWidth(150);
 
                                     //Setting the preserve ratio of the image view
                                     imageView.setPreserveRatio(true);
+
+
 
 
                                     VBox vb=new VBox();
