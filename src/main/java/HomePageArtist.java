@@ -1,6 +1,7 @@
 package main.java;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -102,8 +103,32 @@ public class HomePageArtist extends Application {
 
         //Setting the preserve ratio of the image view
         imageView.setPreserveRatio(true);
+
+
+        Button button1 = new Button();
+        button1.setGraphic(new ImageView(image));
+        button1.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+
+
+                Stage st=new Stage();
+                try {
+                    Scene scene2=new ArtworkFrame(800,500,st,image);
+                    st.setScene(scene2);
+                    st.show();
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+
+
+                System.out.println("Accepted");
+            }
+        });
+
+
+
         rightControl.setAlignment(Pos.CENTER);
-        rightControl.getChildren().add(imageView);
+        rightControl.getChildren().add(button1);
 
         splitPane.getItems().addAll(leftControl, rightControl);
         Scene scene=new Scene(splitPane,800,500);
