@@ -28,7 +28,7 @@ public class ClassTest {
         art.regArt(u1,a4,"C://Users//alexs//Desktop//STUFF//de scos//IMG_20190804_084230.jpg");
         art.regArt(u2,a5,"C://Users//alexs//Desktop//STUFF//de scos//IMG_20190826_125108.jpg");
         */
-        System.out.println(u.getUser("alex","bob" ));
-        System.out.println(u.getUser("2","2"));
+        //System.out.println(u.getUser("alex","bob" ));
+        //System.out.println(u.getUser("2","2"));
     }
 }

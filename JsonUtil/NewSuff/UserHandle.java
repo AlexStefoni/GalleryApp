@@ -136,7 +136,7 @@ public class UserHandle {
 
     public User getUser(String u,String p){
         User user=new User("0","0",false,"0","0","0");
-        if(!this.fileExists()) {
+
             obj = new JSONObject(this.getJSONStringFromFile());
 
             JSONArray arr=obj.getJSONArray("USERS");
@@ -154,7 +154,6 @@ public class UserHandle {
                     );
                 }
             }
-        }
         return user;
     }
 }
