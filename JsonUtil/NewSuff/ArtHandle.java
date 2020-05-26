@@ -41,12 +41,15 @@ public class ArtHandle {
 
         try {
             File myFile = new File("dataArt//art.json");
+
             if (myFile.length() == 0) {
+                a.setPicPath(this.PicReader(account,artPath));
                 JSONArray arr=new JSONArray();
                 arr.put(a.artToJson());
                 obj.put(account.name(),arr);
 
             } else {
+                a.setPicPath(this.PicReader(account,artPath));
                 obj = new JSONObject(this.getJSONStringFromFile());
                 if(obj.has(account.name())) {
                     JSONArray arr = obj.getJSONArray(account.name());
@@ -59,7 +62,7 @@ public class ArtHandle {
 
             }
 
-            a.setPicPath(this.PicReader(account,artPath));
+
             FileWriter myWriter = new FileWriter("dataArt//art.json");
             myWriter.write(obj.toString(4));
             myWriter.close();
