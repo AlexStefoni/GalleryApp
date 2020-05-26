@@ -53,14 +53,12 @@ public class HomePageArtist extends Application {
 
         Button btn1 =new Button("Add Artwork");
         Button btn2 =new Button("View orders");
-        Button btn3 =new Button("See comments");
-
-        Button btn5=new Button("Log out");
+        Button btn5=new Button("Logout");
 
 
         leftControl.getChildren().add(btn1);
         leftControl.getChildren().add(btn2);
-        leftControl.getChildren().add(btn3);
+       
         leftControl.getChildren().add(btn5);
 
         btn1.setOnMouseClicked(new EventHandler<MouseEvent>() {
