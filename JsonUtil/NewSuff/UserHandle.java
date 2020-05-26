@@ -134,21 +134,7 @@ public class UserHandle {
         return true;
     }
 
-    public User getStatus(){
-
-        String name="";
-        File statFile=new File("USER//status.txt");
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(statFile));
-            name=br.readLine();
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
+    public User getUser(String u,String p){
         User user=new User("0","0",false,"0","0","0");
 
             obj = new JSONObject(this.getJSONStringFromFile());
@@ -156,7 +142,9 @@ public class UserHandle {
             JSONArray arr=obj.getJSONArray("USERS");
             for(int i=0;i<arr.length();i++){
                 //System.out.println(decode(arr.getJSONObject(i).get("password").toString()));
-                if((arr.getJSONObject(i).get("username").toString().equals(name))){
+                if((arr.getJSONObject(i).get("username").toString().equals(u)) &&
+                        (decode(arr.getJSONObject(i).get("password").toString()).equals(p)))
+                {
                     user=new User(arr.getJSONObject(i).get("username").toString(),
                             arr.getJSONObject(i).get("username").toString(),
                             arr.getJSONObject(i).getBoolean("artist"),
@@ -167,31 +155,5 @@ public class UserHandle {
                 }
             }
         return user;
-    }
-    public void setStatus(String name){
-        try {
-
-            File myFile = new File("USER//status.txt");
-
-            if (myFile.createNewFile()) {
-                System.out.println("File is created!");
-            } else {
-                System.out.println("File already exists.");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        try{
-
-        FileWriter myWriter = new FileWriter("USER//status.txt");
-        myWriter.write(name);
-        myWriter.close();
-        System.out.println("Successfully wrote to the file.");
-
-    } catch(IOException e){
-        System.out.println("An error occurred.");
-        e.printStackTrace();
-    }
     }
 }
